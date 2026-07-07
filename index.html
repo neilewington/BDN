@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BDN Skool — AI Circle for Entrepreneurs in Barcelona</title>
+  <meta name="description" content="Join Barcelona's AI community for entrepreneurs, builders and digital nomads. Weekly AI calls, monthly events, co-working and a trusted network." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #3B7BF6;
+      --blue-dark: #2563EB;
+      --blue-light: #EFF6FF;
+      --ink: #0A0F1E;
+      --ink-2: #1E2A3B;
+      --slate: #64748B;
+      --slate-light: #94A3B8;
+      --border: #E2E8F0;
+      --border-dark: #1E293B;
+      --white: #FFFFFF;
+      --off-white: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --radius: 12px;
+      --radius-lg: 16px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 60px;
+      display: flex; align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-mark {
+      width: 30px; height: 30px; border-radius: 8px;
+      background: linear-gradient(135deg, #3B7BF6, #3B7BF6);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 13px; color: white;
+    }
+    .nav-logo-text { font-weight: 600; font-size: 14px; color: var(--ink); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { font-size: 13px; color: var(--slate); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta {
+      font-size: 13px; font-weight: 600; color: white; text-decoration: none;
+      background: var(--blue);
+      padding: 8px 18px; border-radius: 8px;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .nav-cta:hover { background: var(--blue-dark); transform: translateY(-1px); }
+
+    /* HERO */
+    .hero {
+      background: white;
+      padding: 140px 24px 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 600px;
+      background: radial-gradient(ellipse at center, rgba(59,123,246,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 780px; margin: 0 auto; position: relative; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue-light);
+      border: 1px solid rgba(59,123,246,0.25);
+      color: var(--blue);
+      font-size: 12px; font-weight: 500;
+      padding: 6px 14px; border-radius: 100px;
+      margin-bottom: 32px;
+    }
+    .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #3B7BF6; }
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, #3B7BF6, #60A5FA);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 17px;
+      color: var(--slate);
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto 40px;
+    }
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 64px; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue);
+      color: white; text-decoration: none;
+      font-size: 14px; font-weight: 600;
+      padding: 13px 24px; border-radius: 10px;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--ink); text-decoration: none;
+      font-size: 14px; font-weight: 500;
+      padding: 13px 24px; border-radius: 10px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .btn-ghost:hover { background: var(--off-white); border-color: #CBD5E1; }
+
+    /* HERO PREVIEW */
+    .hero-preview {
+      max-width: 860px; margin: 64px auto 0;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .hero-preview-bar {
+      height: 40px; background: white;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; padding: 0 16px; gap: 6px;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-r { background: #FF5F57; }
+    .dot-y { background: #FFBD2E; }
+    .dot-g { background: #28C840; }
+    .preview-label { font-size: 12px; color: var(--slate-light); margin-left: 12px; }
+    .hero-preview-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 12px; padding: 20px;
+    }
+    .preview-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px;
+    }
+    .preview-card-icon { font-size: 18px; margin-bottom: 8px; }
+    .preview-card-title { font-size: 12px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+    .preview-card-sub { font-size: 11px; color: var(--slate-light); }
+
+    /* CONTAINER */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* SOCIAL PROOF */
+    .proof {
+      border-bottom: 1px solid var(--border);
+      padding: 56px 24px;
+      background: var(--off-white);
+    }
+    .proof-label {
+      text-align: center; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--slate-light); margin-bottom: 36px;
+    }
+    .proof-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 20px; max-width: 860px; margin: 0 auto;
+    }
+    .proof-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px 20px; text-align: center;
+    }
+    .proof-num {
+      font-size: 28px; font-weight: 800; color: var(--ink);
+      letter-spacing: -0.02em; margin-bottom: 4px;
+    }
+    .proof-num span { color: var(--blue); }
+    .proof-desc { font-size: 13px; color: var(--slate); }
+    .proof-footer {
+      text-align: center; margin-top: 28px;
+      font-size: 12px; color: var(--slate-light);
+      letter-spacing: 0.05em;
+    }
+
+    /* SECTION HEADER */
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--blue);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 800; color: var(--ink);
+      letter-spacing: -0.025em; line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 16px; color: var(--slate);
+      max-width: 480px; margin: 0 auto; line-height: 1.65;
+    }
+
+    /* INCLUDES */
+    .includes { padding: 96px 24px; background: white; }
+    .includes-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+    }
+    .feature-card {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px 24px;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      border-color: #BFDBFE;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(59,123,246,0.08);
+    }
+    .feature-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: var(--blue-light); display: flex;
+      align-items: center; justify-content: center;
+      font-size: 18px; margin-bottom: 16px;
+    }
+    .feature-title { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+    .feature-desc { font-size: 13px; color: var(--slate); line-height: 1.6; }
+
+    /* DIFFERENT */
+    .different { padding: 96px 24px; background: var(--off-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .different-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .different-text .section-header { text-align: left; margin-bottom: 32px; }
+    .different-text .section-sub { margin: 0; max-width: 100%; }
+    .different-body { font-size: 15px; color: var(--slate); line-height: 1.75; margin: 16px 0 28px; }
+    .check-list { display: flex; flex-direction: column; gap: 12px; }
+    .check-item { display: flex; align-items: flex-start; gap: 12px; }
+    .check-icon {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--blue); color: white;
+      font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .check-text { font-size: 14px; color: var(--ink); font-weight: 500; line-height: 1.5; }
+    .different-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .diff-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 24px;
+      text-align: center; transition: border-color 0.2s;
+    }
+    .diff-card:hover { border-color: #BFDBFE; }
+    .diff-card-icon { font-size: 28px; margin-bottom: 12px; }
+    .diff-card-title { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+    .diff-card-desc { font-size: 12px; color: var(--slate); line-height: 1.5; }
+
+    /* WHO */
+    .who { padding: 96px 24px; background: white; }
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 680px; margin: 0 auto 24px; }
+    .tag {
+      background: var(--blue-light); color: var(--blue-dark);
+      font-size: 13px; font-weight: 500;
+      padding: 8px 16px; border-radius: 100px;
+      border: 1px solid #BFDBFE;
+    }
+    .who-note { text-align: center; font-size: 14px; color: var(--slate); max-width: 420px; margin: 0 auto; line-height: 1.6; }
+
+    /* FOUNDERS */
+    .founders { padding: 96px 24px; background: var(--off-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .founders .section-title { color: var(--ink); }
+    .founders .section-sub { color: var(--slate); }
+    .founders-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .founder-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 32px;
+      text-align: center;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .founder-card:hover {
+      border-color: #BFDBFE;
+      box-shadow: 0 8px 24px rgba(59,123,246,0.08);
+    }
+    .founder-avatar {
+      width: 144px; height: 144px; border-radius: 50%;
+      margin: 0 auto 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; font-weight: 800; color: white;
+      border: 2px solid var(--border);
+    }
+    .founder-name { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+    .founder-role { font-size: 12px; color: var(--blue); font-weight: 500; margin-bottom: 16px; }
+    .founder-bio { font-size: 13px; color: var(--slate); line-height: 1.65; margin-bottom: 20px; }
+    .linkedin-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; color: var(--slate);
+      border: 1px solid var(--border);
+      padding: 6px 14px; border-radius: 8px; text-decoration: none;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .linkedin-btn:hover { color: var(--blue); border-color: #BFDBFE; }
+    .linkedin-btn svg { width: 13px; height: 13px; }
+
+    /* AMBASSADORS */
+    .ambassadors { padding: 96px 24px; background: white; }
+    .ambassador-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .ambassador-card {
+      background: var(--off-white); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 24px 16px; text-align: center;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .ambassador-card:hover {
+      border-color: #BFDBFE; transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(59,123,246,0.08);
+    }
+    .amb-avatar {
+      width: 104px; height: 104px; border-radius: 50%;
+      margin: 0 auto 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 800; color: white;
+    }
+    .amb-name { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+    .amb-spec { font-size: 11px; font-weight: 600; margin-bottom: 8px; }
+    .amb-bio { font-size: 11px; color: var(--slate); line-height: 1.5; margin-bottom: 12px; }
+    .amb-link { font-size: 11px; color: var(--blue); text-decoration: none; font-weight: 500; }
+    .amb-link:hover { text-decoration: underline; }
+
+    /* BUILDING */
+    .building { padding: 96px 24px; background: var(--off-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .building-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .update-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .update-card:hover { border-color: #BFDBFE; box-shadow: 0 8px 24px rgba(59,123,246,0.06); }
+    .update-badge {
+      display: inline-block;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px; border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .badge-blue { background: var(--blue-light); color: var(--blue-dark); }
+    .badge-purple { background: #EFF6FF; color: #2563EB; }
+    .badge-green { background: #ECFDF5; color: #065F46; }
+    .badge-amber { background: #FFFBEB; color: #92400E; }
+    .update-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+    .update-desc { font-size: 13px; color: var(--slate); line-height: 1.65; margin-bottom: 20px; }
+    .update-meta { font-size: 12px; color: var(--slate-light); padding-top: 16px; border-top: 1px solid var(--border); }
+
+    /* EVENTS */
+    .events { padding: 96px 24px; background: white; }
+    .events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .event-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .event-card:hover { border-color: #BFDBFE; transform: translateY(-3px); box-shadow: 0 12px 32px rgba(59,123,246,0.08); }
+    .event-stripe { height: 3px; }
+    .event-body { padding: 24px; }
+    .event-label {
+      display: inline-block;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--blue);
+      background: var(--blue-light); padding: 4px 10px; border-radius: 100px;
+      margin-bottom: 14px;
+    }
+    .event-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+    .event-desc { font-size: 13px; color: var(--slate); line-height: 1.6; margin-bottom: 18px; }
+    .event-meta { display: flex; align-items: center; gap: 12px; font-size: 12px; color: var(--slate-light); }
+    .event-cta-card {
+      background: linear-gradient(135deg, #EFF6FF, #F0F0FF);
+      border: 1px solid #BFDBFE;
+      border-radius: var(--radius-lg); padding: 32px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+    }
+    .event-cta-icon { font-size: 32px; margin-bottom: 12px; }
+    .event-cta-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+    .event-cta-desc { font-size: 13px; color: var(--slate); margin-bottom: 20px; }
+
+    /* FINAL CTA */
+    .final-cta {
+      background: white;
+      padding: 120px 24px;
+      text-align: center;
+      position: relative; overflow: hidden;
+      border-top: 1px solid var(--border);
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      top: -100px; left: 50%; transform: translateX(-50%);
+      width: 700px; height: 500px;
+      background: radial-gradient(ellipse at center, rgba(59,123,246,0.08), transparent 70%);
+      pointer-events: none;
+    }
+    .final-cta-inner { max-width: 580px; margin: 0 auto; position: relative; }
+    .final-cta h2 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800; color: var(--ink);
+      letter-spacing: -0.03em; line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .final-cta h2 span {
+      background: linear-gradient(135deg, #3B7BF6, #60A5FA);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .final-cta p { font-size: 16px; color: var(--slate); line-height: 1.7; margin-bottom: 40px; }
+    .final-cta-meta { margin-top: 24px; font-size: 13px; color: var(--slate-light); }
+
+    /* FOOTER */
+    footer {
+      background: white;
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-left { display: flex; align-items: center; gap: 10px; }
+    .footer-logo-mark {
+      width: 26px; height: 26px; border-radius: 7px;
+      background: linear-gradient(135deg, #3B7BF6, #3B7BF6);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 11px; color: white;
+    }
+    .footer-name { font-size: 13px; color: var(--slate); }
+    .footer-links { display: flex; align-items: center; gap: 24px; }
+    .footer-links a { font-size: 13px; color: var(--slate); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--ink); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .includes-grid { grid-template-columns: repeat(2, 1fr); }
+      .founders-grid { grid-template-columns: 1fr; }
+      .ambassador-grid { grid-template-columns: repeat(2, 1fr); }
+      .different-grid { grid-template-columns: 1fr; gap: 48px; }
+      .building-grid { grid-template-columns: 1fr; }
+      .events-grid { grid-template-columns: 1fr; }
+      .proof-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+      .hero-preview-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .includes-grid { grid-template-columns: 1fr; }
+      .ambassador-grid { grid-template-columns: 1fr; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .hero { padding: 120px 20px 72px; }
+      .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <!-- REPLACE: swap the letter B for your actual logo -->
+        <div class="nav-logo-mark">B</div>
+        <span class="nav-logo-text">BDN Skool</span>
+      </a>
+      <div class="nav-links">
+        <a href="#includes">What's included</a>
+        <a href="#team">Team</a>
+        <a href="#ambassadors">Community Experts</a>
+        <a href="#events">Events</a>
+      </div>
+      <!-- REPLACE href with your actual Skool URL -->
+      <a href="https://www.skool.com/REPLACE" target="_blank" class="nav-cta">Join the Community</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        Barcelona's AI Circle for Entrepreneurs
+      </div>
+      <h1>Learn AI. Build Real<br />Projects. <span>Meet in Barcelona.</span></h1>
+      <p>The online home for BDN's AI Circle — weekly calls, monthly Barcelona events, co-working, recordings, practical tools, and a trusted network of entrepreneurs learning AI together.</p>
+      <div class="hero-actions">
+        <!-- REPLACE href with your actual Skool URL -->
+        <a href="https://www.skool.com/REPLACE" target="_blank" class="btn-primary">Join the Skool Community →</a>
+        <a href="#includes" class="btn-ghost">See What's Included</a>
+      </div>
+    </div>
+
+    <!-- Hero preview mockup -->
+    <div class="hero-preview container">
+      <div class="hero-preview-bar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="preview-label">BDN Skool Community — Skool.com</span>
+      </div>
+      <div class="hero-preview-grid">
+        <div class="preview-card">
+          <div class="preview-card-icon">🎙</div>
+          <div class="preview-card-title">Weekly AI Calls</div>
+          <div class="preview-card-sub">Every Tuesday</div>
+        </div>
+        <div class="preview-card">
+          <div class="preview-card-icon">🏙</div>
+          <div class="preview-card-title">BCN Events</div>
+          <div class="preview-card-sub">Monthly in person</div>
+        </div>
+        <div class="preview-card">
+          <div class="preview-card-icon">🛠</div>
+          <div class="preview-card-title">Build Sessions</div>
+          <div class="preview-card-sub">Weekly co-working</div>
+        </div>
+        <div class="preview-card">
+          <div class="preview-card-icon">🤝</div>
+          <div class="preview-card-title">Founder Access</div>
+          <div class="preview-card-sub">Ambassadors + founders</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="includes" id="includes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">What you get</span>
+        <h2 class="section-title">Everything in one membership</h2>
+        <p class="section-sub">Live calls, in-person events, recordings, tools, and the community — all inside Skool.</p>
+      </div>
+      <div class="includes-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎙</div>
+          <div class="feature-title">Weekly AI Calls</div>
+          <div class="feature-desc">Live group calls every week. AI tools, workflows, builds, and Q&A with the community. Recorded and uploaded after.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏙</div>
+          <div class="feature-title">Monthly Barcelona Events</div>
+          <div class="feature-desc">Real meetups in Barcelona. Talks, panels, networking, and builder nights — all with the wider BDN network.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📹</div>
+          <div class="feature-title">Event Recordings</div>
+          <div class="feature-desc">Every call and event is recorded and stored inside Skool. Watch on your schedule, never miss a session.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💻</div>
+          <div class="feature-title">Weekly Co-working Days</div>
+          <div class="feature-desc">Work alongside other entrepreneurs in Barcelona. Show up, focus, connect, and make progress on what matters.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-title">Practical AI Workflows</div>
+          <div class="feature-desc">Tutorials, prompts, automations, and tool stacks that actually work — shared by people using them in real businesses.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔭</div>
+          <div class="feature-title">Builder Updates</div>
+          <div class="feature-desc">See what the community is building. New tools, projects, and experiments — shared openly as they happen.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <div class="feature-title">Founder & Community Expert Access</div>
+          <div class="feature-desc">Direct access to founders and community experts doing the work. Ask questions, get feedback, and connect.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-title">Community Accountability</div>
+          <div class="feature-desc">Share what you're working on. Get support and move faster with people who are building alongside you.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY DIFFERENT -->
+  <section class="different">
+    <div class="container">
+      <div class="different-grid">
+        <div class="different-text">
+          <div class="section-header">
+            <span class="section-eyebrow">Why this is different</span>
+            <h2 class="section-title">Not another AI course</h2>
+          </div>
+          <p class="different-body">Most AI content is passive. You watch a video, feel inspired, then carry on as before. BDN Skool is connected to live events, people doing real work, and a Barcelona network you can tap into in person.</p>
+          <p class="different-body" style="margin-top:0;">We're not selling a course. We're building an operating environment for entrepreneurs who want to learn AI by using it.</p>
+          <div class="check-list">
+            <div class="check-item">
+              <div class="check-icon">✓</div>
+              <span class="check-text">Learn by doing — real tools, real builds, real workflows</span>
+            </div>
+            <div class="check-item">
+              <div class="check-icon">✓</div>
+              <span class="check-text">Meet people in real life, not just online</span>
+            </div>
+            <div class="check-item">
+              <div class="check-icon">✓</div>
+              <span class="check-text">Share what works — tools, prompts, automations, results</span>
+            </div>
+            <div class="check-item">
+              <div class="check-icon">✓</div>
+              <span class="check-text">Get inspired by other builders in the network</span>
+            </div>
+            <div class="check-item">
+              <div class="check-icon">✓</div>
+              <span class="check-text">Turn AI curiosity into practical, usable capability</span>
+            </div>
+          </div>
+        </div>
+        <div class="different-cards">
+          <div class="diff-card">
+            <div class="diff-card-icon">🧱</div>
+            <div class="diff-card-title">Build Together</div>
+            <div class="diff-card-desc">Projects, tools, and workflows built as a community</div>
+          </div>
+          <div class="diff-card">
+            <div class="diff-card-icon">📍</div>
+            <div class="diff-card-title">Meet in Barcelona</div>
+            <div class="diff-card-desc">Monthly in-person events with the BDN network</div>
+          </div>
+          <div class="diff-card">
+            <div class="diff-card-icon">🧠</div>
+            <div class="diff-card-title">Learn AI for Real</div>
+            <div class="diff-card-desc">Practical, not theoretical. Applied immediately</div>
+          </div>
+          <div class="diff-card">
+            <div class="diff-card-icon">🔗</div>
+            <div class="diff-card-title">Connected Network</div>
+            <div class="diff-card-desc">Founders, ambassadors, operators, and builders</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="who">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Who it's for</span>
+        <h2 class="section-title">Built for people doing the work</h2>
+        <p class="section-sub">Not for passive learners. For people who want to use AI practically and connect with others doing the same.</p>
+      </div>
+      <div class="tag-cloud">
+        <span class="tag">Entrepreneurs</span>
+        <span class="tag">Freelancers</span>
+        <span class="tag">Startup Founders</span>
+        <span class="tag">Digital Nomads</span>
+        <span class="tag">Marketers</span>
+        <span class="tag">Salespeople</span>
+        <span class="tag">Operators</span>
+        <span class="tag">Creators</span>
+        <span class="tag">Consultants</span>
+        <span class="tag">Growth Hackers</span>
+        <span class="tag">Product Builders</span>
+        <span class="tag">AI Enthusiasts</span>
+      </div>
+      <p class="who-note">If you want to use AI practically — not just read about it — and meet ambitious people in Barcelona, this community is for you.</p>
+    </div>
+  </section>
+
+  <!-- FOUNDERS -->
+  <section class="founders" id="team">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow" style="color:#60A5FA;">The team</span>
+        <h2 class="section-title">Who's behind BDN Skool</h2>
+        <p class="section-sub">Community-led and founder-operated. We're builders and entrepreneurs learning in public.</p>
+      </div>
+      <div class="founders-grid">
+
+        <div class="founder-card">
+          <div class="founder-avatar" style="background:none;border:none;overflow:hidden;"><img src="vik.png" alt="Viktor Vincej" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
+          <div class="founder-name">Viktor Vincej</div>
+          <div class="founder-role">Co-founder</div>
+          <div class="founder-bio">Builder, connector, and the driving force behind BDN. Viktor brings together entrepreneurs, nomads, and builders across Barcelona.</div>
+          <a href="https://linkedin.com/in/REPLACE" target="_blank" class="linkedin-btn">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+
+        <div class="founder-card">
+          <div class="founder-avatar" style="background:none;border:none;overflow:hidden;"><img src="neil-ewington.jpeg" alt="Neil Ewington" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
+          <div class="founder-name">Neil Ewington</div>
+          <div class="founder-role">Co-founder</div>
+          <div class="founder-bio">Entrepreneur and strategist helping founders build smarter. Neil brings structure, systems, and sharp thinking to the BDN community.</div>
+          <a href="https://linkedin.com/in/REPLACE" target="_blank" class="linkedin-btn">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+
+        <div class="founder-card">
+          <div class="founder-avatar" style="background:none;border:none;overflow:hidden;"><img src="jonas-alfonso.jpeg" alt="Jonas Alfonso" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
+          <div class="founder-name">Jonas Alfonso</div>
+          <div class="founder-role">Co-founder</div>
+          <div class="founder-bio">Developer, AI builder, and technical backbone of BDN Skool. Jonas turns ideas into real products and helps the community do the same.</div>
+          <a href="https://linkedin.com/in/REPLACE" target="_blank" class="linkedin-btn">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AMBASSADORS -->
+  <section class="ambassadors" id="ambassadors">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Community experts</span>
+        <h2 class="section-title">Meet the Community Experts</h2>
+        <p class="section-sub">Practitioners, builders, and operators who bring real expertise into the community.</p>
+      </div>
+      <div class="ambassador-grid">
+
+        <div class="ambassador-card">
+          <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="Kate-busby.jpeg" alt="Kate Busby" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
+          <div class="amb-name">Kate Busby</div>
+          <div class="amb-spec" style="color:#3B7BF6;">AI-Native Growth Expert</div>
+          <div class="amb-bio">Helping founders grow faster using AI-first strategies and systems.</div>
+          <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
+        </div>
+
+        <div class="ambassador-card">
+          <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="Katya-Dominguez.jpeg" alt="Katya Dominguez" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
+          <div class="amb-name">Katya Dominguez</div>
+          <div class="amb-spec" style="color:#3B7BF6;">Founder & CEO</div>
+          <div class="amb-bio">Serial founder building at the intersection of AI and entrepreneurship.</div>
+          <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
+        </div>
+
+        <div class="ambassador-card">
+          <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="katja-rubin.jpeg" alt="Katja Rubin" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
+          <div class="amb-name">Katja Rubin</div>
+          <div class="amb-spec" style="color:#3B7BF6;">Head of AI Education</div>
+          <div class="amb-bio">Making AI practical and accessible for entrepreneurs and teams.</div>
+          <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
+        </div>
+
+        <div class="ambassador-card">
+          <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="lauren-peikert.jpeg" alt="Lauren Peikert" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
+          <div class="amb-name">Lauren Peikert</div>
+          <div class="amb-spec" style="color:#3B7BF6;">Growth Marketing & AI Automation</div>
+          <div class="amb-bio">Scaling brands through AI-powered marketing and automation systems.</div>
+          <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
+        </div>
+
+        <div class="ambassador-card">
+          <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="Patrick-Farrell.jpeg" alt="Patrick Farrell" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
+          <div class="amb-name">Patrick Farrell</div>
+          <div class="amb-spec" style="color:#3B7BF6;">Tech Founder & Business Mentor</div>
+          <div class="amb-bio">Connecting founders with the right people, ideas, and opportunities.</div>
+          <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
+        </div>
+
+        <div class="ambassador-card">
+          <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="matthias-kupka.jpeg" alt="Matthias Kupka" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
+          <div class="amb-name">Matthias Kupka</div>
+          <div class="amb-spec" style="color:#3B7BF6;">Lead Generation Specialist</div>
+          <div class="amb-bio">Building high-converting lead gen systems for ambitious businesses.</div>
+          <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
+        </div>
+
+        <div class="ambassador-card">
+          <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="Max-Matronin.jpeg" alt="Max Matronin" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
+          <div class="amb-name">Max Matronin</div>
+          <div class="amb-spec" style="color:#3B7BF6;">Expert AI Developer</div>
+          <div class="amb-bio">Building custom AI solutions and integrations for founders and teams.</div>
+          <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
+        </div>
+
+        <div class="ambassador-card">
+          <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="Surya-Sanchez.jpeg" alt="Surya Sanchez" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
+          <div class="amb-name">Surya Sanchez</div>
+          <div class="amb-spec" style="color:#3B7BF6;">AI Automation Expert</div>
+          <div class="amb-bio">Automating workflows so founders can focus on what matters most.</div>
+          <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
+        </div>
+
+        <div class="ambassador-card">
+          <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="Greg-Olmstead.jpeg" alt="Greg Olmstead" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
+          <div class="amb-name">Greg Olmstead</div>
+          <div class="amb-spec" style="color:#3B7BF6;">Architect, Author & Engineer</div>
+          <div class="amb-bio">Multi-disciplinary builder turning complex ideas into real products.</div>
+          <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE'RE BUILDING -->
+  <section class="building">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Live updates</span>
+        <h2 class="section-title">What We're Building</h2>
+        <p class="section-sub">We share openly. Here's what the community is working on right now inside Skool.</p>
+      </div>
+      <div class="building-grid">
+
+        <!-- REPLACE all update cards with real content -->
+
+        <div class="update-card">
+          <div class="update-badge badge-blue">AI Tools</div>
+          <div class="update-title">Testing new AI agent stacks</div>
+          <div class="update-desc">Running experiments with multi-agent workflows for content, outreach, and research automation — sharing results live with the community.</div>
+          <div class="update-meta">Ongoing · Open to all members</div>
+        </div>
+
+        <div class="update-card">
+          <div class="update-badge badge-purple">Platform</div>
+          <div class="update-title">Community platform experiments</div>
+          <div class="update-desc">Building out the Skool space — resource libraries, member spotlights, ambassador sessions, and better onboarding flows.</div>
+          <div class="update-meta">In progress · Members contributing</div>
+        </div>
+
+        <div class="update-card">
+          <div class="update-badge badge-blue">Events</div>
+          <div class="update-title">Next Barcelona event planning</div>
+          <div class="update-desc">Next event topic and venue in progress. Members vote on themes. Recordings go into the Skool library straight after.</div>
+          <div class="update-meta">Coming soon · Date TBC</div>
+        </div>
+
+        <div class="update-card">
+          <div class="update-badge badge-purple">Recordings</div>
+          <div class="update-title">Latest call recordings uploaded</div>
+          <div class="update-desc">Weekly call recordings go into the library within 24 hours. Members catch up on anything they missed, in full.</div>
+          <div class="update-meta">Updated weekly</div>
+        </div>
+
+        <div class="update-card">
+          <div class="update-badge badge-blue">Ambassador Sessions</div>
+          <div class="update-title">Ambassador-led deep dives</div>
+          <div class="update-desc">Ambassadors run specialist sessions on their area — prompt engineering, AI for sales, funding, and more.</div>
+          <div class="update-meta">Monthly sessions · See inside Skool</div>
+        </div>
+
+        <div class="update-card">
+          <div class="update-badge badge-blue">Member Projects</div>
+          <div class="update-title">Member projects & launches</div>
+          <div class="update-desc">Members share what they're building — new tools, workflows, businesses, and experiments. Real builds, real feedback.</div>
+          <div class="update-meta">Active discussions daily</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="events" id="events">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Barcelona events</span>
+        <h2 class="section-title">Monthly meetups, recorded for you</h2>
+        <p class="section-sub">Every month we run events in Barcelona — recorded and uploaded to Skool so no member misses out.</p>
+      </div>
+      <div class="events-grid">
+
+        <!-- REPLACE all event cards with real upcoming events -->
+
+        <div class="event-card">
+          <div class="event-stripe" style="background:linear-gradient(90deg,#3B7BF6,#3B7BF6);"></div>
+          <div class="event-body">
+            <div class="event-label">Upcoming</div>
+            <div class="event-title">Making Money with AI</div>
+            <div class="event-desc">Real business models, side projects, and revenue streams built using AI. Practitioners share what's working now.</div>
+            <div class="event-meta"><span>📍 Barcelona</span><span>·</span><span>📹 Recorded for Skool</span></div>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-stripe" style="background:linear-gradient(90deg,#0EA5E9,#3B7BF6);"></div>
+          <div class="event-body">
+            <div class="event-label">Upcoming</div>
+            <div class="event-title">AI for Entrepreneurs</div>
+            <div class="event-desc">Practical AI tools for running and growing a business. Operations, marketing, sales — applied, not theoretical.</div>
+            <div class="event-meta"><span>📍 Barcelona</span><span>·</span><span>📹 Recorded for Skool</span></div>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-stripe" style="background:linear-gradient(90deg,#3B7BF6,#3B7BF6);"></div>
+          <div class="event-body">
+            <div class="event-label">Monthly</div>
+            <div class="event-title">Builder Night</div>
+            <div class="event-desc">Show and tell for builders. Demos, experiments, tools in progress, and honest feedback from people building too.</div>
+            <div class="event-meta"><span>📍 Barcelona</span><span>·</span><span>📹 Recorded for Skool</span></div>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-stripe" style="background:linear-gradient(90deg,#059669,#0EA5E9);"></div>
+          <div class="event-body">
+            <div class="event-label">Weekly</div>
+            <div class="event-title">AI Co-working Day</div>
+            <div class="event-desc">Weekly co-working in Barcelona. Work alongside other entrepreneurs. No agenda — just show up and get things done.</div>
+            <div class="event-meta"><span>📍 Barcelona</span><span>·</span><span>Open to members</span></div>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-stripe" style="background:linear-gradient(90deg,#3B7BF6,#0EA5E9);"></div>
+          <div class="event-body">
+            <div class="event-label">Upcoming</div>
+            <div class="event-title">Startup Tools Session</div>
+            <div class="event-desc">The best AI tools for startups and early-stage founders. Hands-on demos, comparisons, and open discussion.</div>
+            <div class="event-meta"><span>📍 Barcelona</span><span>·</span><span>📹 Recorded for Skool</span></div>
+          </div>
+        </div>
+
+        <div class="event-cta-card">
+          <div class="event-cta-icon">📅</div>
+          <div class="event-cta-title">More events inside</div>
+          <div class="event-cta-desc">Full calendar and all recordings available inside the Skool community.</div>
+          <!-- REPLACE href with your actual Skool URL -->
+          <a href="https://www.skool.com/REPLACE" target="_blank" class="btn-primary">See All Events →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="proof">
+    <div class="container">
+      <p class="proof-label">Part of an established Barcelona community</p>
+      <div class="proof-grid">
+        <div class="proof-card">
+          <div class="proof-num">8,500<span>+</span></div>
+          <div class="proof-desc">Meetup Members</div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-num">12,000<span>+</span></div>
+          <div class="proof-desc">Instagram Followers</div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-num">6,500<span>+</span></div>
+          <div class="proof-desc">Newsletter Subscribers</div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-num">5,500<span>+</span></div>
+          <div class="proof-desc">WhatsApp Community</div>
+        </div>
+      </div>
+      <p class="proof-footer">Entrepreneurs · Founders · Freelancers · Digital Nomads · Marketers · Builders · Creators</p>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="final-cta-inner">
+      <h2>Join the community.<br />Come to the events.<br /><span>Meet the builders.</span></h2>
+      <p>Join the online community, come to the live events in Barcelona, and meet the people building seriously with AI. This is the network you've been looking for.</p>
+      <!-- REPLACE href with your actual Skool URL -->
+      <a href="https://www.skool.com/REPLACE" target="_blank" class="btn-primary" style="font-size:15px;padding:15px 32px;">Join the BDN Skool Community →</a>
+      <div class="final-cta-meta">Weekly AI calls · Monthly Barcelona events · Recordings · Co-working · Real community</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo-mark">B</div>
+        <span class="footer-name">BDN Skool Community — Barcelona Digital Nomads</span>
+      </div>
+      <div class="footer-links">
+        <!-- REPLACE with real social links -->
+        <a href="https://instagram.com/REPLACE" target="_blank">Instagram</a>
+        <a href="https://www.meetup.com/REPLACE" target="_blank">Meetup</a>
+        <a href="https://www.skool.com/REPLACE" target="_blank">Skool</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
