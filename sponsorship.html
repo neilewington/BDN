@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sponsor BDN — Barcelona's AI & Entrepreneur Community</title>
+  <meta name="description" content="Reach 2,000+ in-person attendees and 50,000+ community members across Barcelona's fastest-growing AI and entrepreneur network." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #3B7BF6;
+      --blue-dark: #2563EB;
+      --blue-light: #EFF6FF;
+      --ink: #0A0F1E;
+      --slate: #64748B;
+      --slate-light: #94A3B8;
+      --border: #E2E8F0;
+      --white: #FFFFFF;
+      --off-white: #F8FAFC;
+      --radius: 12px;
+      --radius-lg: 16px;
+      --gold: #F59E0B;
+      --gold-light: #FFFBEB;
+      --silver: #64748B;
+      --silver-light: #F1F5F9;
+      --bronze: #D97706;
+      --bronze-light: #FEF3C7;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 60px; display: flex; align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-mark {
+      width: 30px; height: 30px; border-radius: 8px;
+      background: linear-gradient(135deg, #3B7BF6, #3B7BF6);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 13px; color: white; overflow: hidden;
+    }
+    .nav-logo-mark img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .nav-logo-text { font-weight: 600; font-size: 14px; color: var(--ink); }
+    .nav-back {
+      font-size: 13px; color: var(--slate); text-decoration: none;
+      display: flex; align-items: center; gap: 6px;
+      transition: color 0.15s;
+    }
+    .nav-back:hover { color: var(--ink); }
+    .nav-cta {
+      font-size: 13px; font-weight: 600; color: white; text-decoration: none;
+      background: var(--blue); padding: 8px 18px; border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .nav-cta:hover { background: var(--blue-dark); }
+
+    /* HERO */
+    .hero {
+      padding: 140px 24px 80px;
+      text-align: center;
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 600px;
+      background: radial-gradient(ellipse at center, rgba(59,123,246,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 760px; margin: 0 auto; position: relative; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue-light); border: 1px solid rgba(59,123,246,0.25);
+      color: var(--blue); font-size: 12px; font-weight: 500;
+      padding: 6px 14px; border-radius: 100px; margin-bottom: 32px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800; color: var(--ink);
+      line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 20px;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, #3B7BF6, #60A5FA);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero p { font-size: 17px; color: var(--slate); line-height: 1.7; max-width: 560px; margin: 0 auto 40px; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue); color: white; text-decoration: none;
+      font-size: 14px; font-weight: 600; padding: 13px 28px; border-radius: 10px;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+
+    /* CONTAINER */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* SECTION HEADER */
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-eyebrow {
+      display: block; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 12px;
+    }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 12px; }
+    .section-sub { font-size: 16px; color: var(--slate); line-height: 1.6; max-width: 560px; margin: 0 auto; }
+
+    /* REACH STATS */
+    .reach { padding: 80px 24px; background: var(--off-white); border-bottom: 1px solid var(--border); }
+    .reach-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+      max-width: 900px; margin: 0 auto;
+    }
+    .reach-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px 24px; text-align: center;
+    }
+    .reach-icon { font-size: 28px; margin-bottom: 12px; }
+    .reach-num { font-size: 32px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 4px; }
+    .reach-num span { color: var(--blue); }
+    .reach-label { font-size: 13px; color: var(--slate); font-weight: 500; }
+
+    /* TIERS */
+    .tiers { padding: 96px 24px; background: white; }
+    .tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .tier-card {
+      border-radius: var(--radius-lg); padding: 36px 28px;
+      border: 2px solid var(--border); position: relative;
+      display: flex; flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .tier-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(59,123,246,0.1); }
+    .tier-card.featured {
+      border-color: var(--blue);
+      box-shadow: 0 8px 32px rgba(59,123,246,0.12);
+    }
+    .tier-badge {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--blue); color: white;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 5px 16px; border-radius: 100px;
+      white-space: nowrap;
+    }
+    .tier-icon { font-size: 32px; margin-bottom: 16px; }
+    .tier-name { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); margin-bottom: 8px; }
+    .tier-title { font-size: 22px; font-weight: 800; color: var(--ink); margin-bottom: 20px; }
+    .tier-price { margin-bottom: 24px; }
+    .tier-price-num { font-size: 48px; font-weight: 800; color: var(--ink); letter-spacing: -0.03em; line-height: 1; }
+    .tier-price-period { font-size: 14px; color: var(--slate); font-weight: 500; margin-top: 4px; }
+    .tier-divider { height: 1px; background: var(--border); margin-bottom: 24px; }
+    .tier-features { list-style: none; flex: 1; }
+    .tier-features li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 13px; color: var(--slate); line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .tier-features li .check { color: var(--blue); font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+    .tier-cta {
+      display: block; text-align: center;
+      background: var(--blue-light); color: var(--blue);
+      font-size: 13px; font-weight: 600; text-decoration: none;
+      padding: 12px; border-radius: 10px; margin-top: 28px;
+      transition: background 0.15s;
+    }
+    .tier-cta:hover { background: #DBEAFE; }
+    .tier-card.featured .tier-cta {
+      background: var(--blue); color: white;
+    }
+    .tier-card.featured .tier-cta:hover { background: var(--blue-dark); }
+
+    /* WHAT YOU GET */
+    .benefits { padding: 96px 24px; background: var(--off-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .benefit-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px;
+    }
+    .benefit-icon { font-size: 24px; margin-bottom: 14px; }
+    .benefit-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+    .benefit-desc { font-size: 13px; color: var(--slate); line-height: 1.6; }
+
+    /* WHO ATTENDS */
+    .audience { padding: 96px 24px; background: white; }
+    .audience-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .audience-card {
+      background: var(--off-white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px 16px; text-align: center;
+    }
+    .audience-icon { font-size: 22px; margin-bottom: 8px; }
+    .audience-label { font-size: 13px; font-weight: 600; color: var(--ink); }
+
+    /* CTA */
+    .cta-section {
+      padding: 96px 24px; background: white;
+      border-top: 1px solid var(--border); text-align: center;
+    }
+    .cta-inner { max-width: 600px; margin: 0 auto; }
+    .cta-section h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 16px; }
+    .cta-section h2 span {
+      background: linear-gradient(135deg, #3B7BF6, #60A5FA);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .cta-section p { font-size: 16px; color: var(--slate); line-height: 1.7; margin-bottom: 36px; }
+    .cta-email {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 18px; font-weight: 700; color: var(--blue);
+      text-decoration: none; margin-bottom: 32px;
+    }
+    .cta-email:hover { text-decoration: underline; }
+    .cta-meta { font-size: 13px; color: var(--slate-light); margin-top: 20px; }
+
+    /* FOOTER */
+    footer {
+      background: white; border-top: 1px solid var(--border); padding: 28px 24px;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-left { display: flex; align-items: center; gap: 10px; }
+    .footer-logo-mark {
+      width: 26px; height: 26px; border-radius: 7px;
+      background: var(--blue); display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .footer-logo-mark img { width: 100%; height: 100%; object-fit: contain; }
+    .footer-name { font-size: 13px; color: var(--slate); }
+    .footer-back { font-size: 13px; color: var(--slate); text-decoration: none; }
+    .footer-back:hover { color: var(--ink); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .tiers-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .reach-grid { grid-template-columns: repeat(2, 1fr); }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .audience-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .reach-grid { grid-template-columns: 1fr; }
+      .audience-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark"><img src="logo.png" alt="BDN Logo"></div>
+        <span class="nav-logo-text">AI Circle Community</span>
+      </a>
+      <a href="index.html" class="nav-back">← Back to main site</a>
+      <a href="mailto:bcndigitalnomads@gmail.com" class="nav-cta">Get in Touch</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">🤝 Sponsorship Opportunities</div>
+      <h1>Reach <span>Barcelona's Most Active</span> Entrepreneur Community</h1>
+      <p>Put your brand in front of 2,000+ in-person attendees every month and over 50,000 community members across our digital channels.</p>
+      <a href="mailto:bcndigitalnomads@gmail.com" class="btn-primary">Enquire About Sponsorship →</a>
+    </div>
+  </section>
+
+  <!-- REACH STATS -->
+  <section class="reach">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Our reach</span>
+        <h2 class="section-title">The numbers behind BDN</h2>
+        <p class="section-sub">A real, engaged community — not just followers. People who show up, pay attention, and take action.</p>
+      </div>
+      <div class="reach-grid">
+        <div class="reach-card">
+          <div class="reach-icon">🏙</div>
+          <div class="reach-num">2,000<span>+</span></div>
+          <div class="reach-label">In-person attendees per month</div>
+        </div>
+        <div class="reach-card">
+          <div class="reach-icon">🌐</div>
+          <div class="reach-num">14,000<span>+</span></div>
+          <div class="reach-label">Meetup.com members</div>
+        </div>
+        <div class="reach-card">
+          <div class="reach-icon">📸</div>
+          <div class="reach-num">12,000<span>+</span></div>
+          <div class="reach-label">Instagram followers</div>
+        </div>
+        <div class="reach-card">
+          <div class="reach-icon">📩</div>
+          <div class="reach-num">6,500<span>+</span></div>
+          <div class="reach-label">Newsletter subscribers</div>
+        </div>
+        <div class="reach-card">
+          <div class="reach-icon">💬</div>
+          <div class="reach-num">7,100<span>+</span></div>
+          <div class="reach-label">WhatsApp community members</div>
+        </div>
+        <div class="reach-card">
+          <div class="reach-icon">📢</div>
+          <div class="reach-num">20,000<span>+</span></div>
+          <div class="reach-label">Monthly paid social reach in Barcelona</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPONSORSHIP TIERS -->
+  <section class="tiers">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Sponsorship packages</span>
+        <h2 class="section-title">Choose your level of visibility</h2>
+        <p class="section-sub">Three tiers designed to fit different budgets and goals — from brand awareness to deep community integration.</p>
+      </div>
+      <div class="tiers-grid">
+
+        <!-- COMMUNITY SPONSOR -->
+        <div class="tier-card">
+          <div class="tier-icon">🥉</div>
+          <div class="tier-name">Tier 1</div>
+          <div class="tier-title">Community Sponsor</div>
+          <div class="tier-price">
+            <div class="tier-price-num">€500</div>
+            <div class="tier-price-period">per month</div>
+          </div>
+          <div class="tier-divider"></div>
+          <ul class="tier-features">
+            <li><span class="check">✓</span> Logo featured in our monthly newsletter (6,500+ subscribers)</li>
+            <li><span class="check">✓</span> Brand mention in 2 Instagram posts per month</li>
+            <li><span class="check">✓</span> Shoutout in our WhatsApp community (7,100+ members)</li>
+            <li><span class="check">✓</span> Logo on event materials and signage</li>
+            <li><span class="check">✓</span> Monthly performance report</li>
+          </ul>
+          <a href="mailto:bcndigitalnomads@gmail.com?subject=Community Sponsor Enquiry" class="tier-cta">Enquire Now →</a>
+        </div>
+
+        <!-- EVENT PARTNER — FEATURED -->
+        <div class="tier-card featured">
+          <div class="tier-badge">Most Popular</div>
+          <div class="tier-icon">🥈</div>
+          <div class="tier-name">Tier 2</div>
+          <div class="tier-title">Event Partner</div>
+          <div class="tier-price">
+            <div class="tier-price-num">€1,500</div>
+            <div class="tier-price-period">per month</div>
+          </div>
+          <div class="tier-divider"></div>
+          <ul class="tier-features">
+            <li><span class="check">✓</span> Everything in Community Sponsor</li>
+            <li><span class="check">✓</span> Branded presence at all monthly in-person events (2,000+ attendees)</li>
+            <li><span class="check">✓</span> 5-minute brand slot at events to introduce your company</li>
+            <li><span class="check">✓</span> Dedicated feature in newsletter (full branded section)</li>
+            <li><span class="check">✓</span> 1 sponsored Instagram reel per month</li>
+            <li><span class="check">✓</span> Logo included in paid social ads (20,000+ monthly reach)</li>
+            <li><span class="check">✓</span> Featured on BDN website and Skool community page</li>
+          </ul>
+          <a href="mailto:bcndigitalnomads@gmail.com?subject=Event Partner Enquiry" class="tier-cta">Enquire Now →</a>
+        </div>
+
+        <!-- HEADLINE SPONSOR -->
+        <div class="tier-card">
+          <div class="tier-icon">🥇</div>
+          <div class="tier-name">Tier 3</div>
+          <div class="tier-title">Headline Sponsor</div>
+          <div class="tier-price">
+            <div class="tier-price-num">€3,500</div>
+            <div class="tier-price-period">per month</div>
+          </div>
+          <div class="tier-divider"></div>
+          <ul class="tier-features">
+            <li><span class="check">✓</span> Everything in Event Partner</li>
+            <li><span class="check">✓</span> Exclusive "Presented by [Brand]" naming on all events</li>
+            <li><span class="check">✓</span> 15-minute speaking slot or product demo at monthly event</li>
+            <li><span class="check">✓</span> Co-branded monthly webinar with your team</li>
+            <li><span class="check">✓</span> Exclusive WhatsApp broadcast to 7,100+ members</li>
+            <li><span class="check">✓</span> Dedicated social campaign (3 posts + 1 reel)</li>
+            <li><span class="check">✓</span> Priority placement in all BDN digital channels</li>
+            <li><span class="check">✓</span> Quarterly strategy call with BDN founders</li>
+          </ul>
+          <a href="mailto:bcndigitalnomads@gmail.com?subject=Headline Sponsor Enquiry" class="tier-cta">Enquire Now →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SPONSOR -->
+  <section class="benefits">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Why BDN</span>
+        <h2 class="section-title">This isn't just an audience. It's a community.</h2>
+        <p class="section-sub">BDN members are active, engaged, and passionate about building businesses. They respond to brands that show up with them.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🏙</div>
+          <div class="benefit-title">Real In-Person Access</div>
+          <div class="benefit-desc">2,000 people show up physically every month. Your brand is in the room — not just on a screen. Real conversations, real connections, real impact.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🎯</div>
+          <div class="benefit-title">Hyper-Targeted Audience</div>
+          <div class="benefit-desc">Entrepreneurs, founders, freelancers, and digital nomads — people with purchasing power and a bias for action. Not passive scrollers.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📊</div>
+          <div class="benefit-title">Multi-Channel Exposure</div>
+          <div class="benefit-desc">Newsletter, Instagram, WhatsApp, Meetup, paid ads, and in-person events — your brand reaches this audience across every touchpoint.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🤝</div>
+          <div class="benefit-title">Trusted Community Endorsement</div>
+          <div class="benefit-desc">When BDN recommends a brand, members listen. Our community trusts us — and that trust transfers directly to our sponsors.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📈</div>
+          <div class="benefit-title">Growing Every Month</div>
+          <div class="benefit-desc">BDN has grown consistently for years. As a sponsor, you grow with us — and your visibility increases as our community does.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🌍</div>
+          <div class="benefit-title">International Reach</div>
+          <div class="benefit-desc">Our community is global — digital nomads and expat entrepreneurs from across Europe and beyond. Ideal for brands with an international angle.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO ATTENDS -->
+  <section class="audience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Who's in the room</span>
+        <h2 class="section-title">Your audience at a glance</h2>
+        <p class="section-sub">BDN attracts ambitious, action-oriented people building real things in Barcelona and beyond.</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-card">
+          <div class="audience-icon">🚀</div>
+          <div class="audience-label">Startup Founders</div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">💻</div>
+          <div class="audience-label">AI Builders & Developers</div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">📱</div>
+          <div class="audience-label">Digital Nomads</div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">📣</div>
+          <div class="audience-label">Marketers & Growth Leads</div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">🎨</div>
+          <div class="audience-label">Freelancers & Creatives</div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">🏢</div>
+          <div class="audience-label">SME Business Owners</div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">🤖</div>
+          <div class="audience-label">AI Enthusiasts</div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">🌍</div>
+          <div class="audience-label">International Expats</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>Ready to <span>sponsor BDN?</span></h2>
+      <p>We have three companies already in conversations about sponsorship. Spots are limited — reach out now to secure your place before they're gone.</p>
+      <div>
+        <a href="mailto:bcndigitalnomads@gmail.com?subject=BDN Sponsorship Enquiry" class="btn-primary" style="font-size: 15px; padding: 14px 32px;">✉️ &nbsp;bcndigitalnomads@gmail.com</a>
+      </div>
+      <p class="cta-meta">We'll get back to you within 24 hours with a custom proposal.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo-mark"><img src="logo.png" alt="BDN"></div>
+        <span class="footer-name">Barcelona Digital Nomads · AI Circle Community</span>
+      </div>
+      <a href="index.html" class="footer-back">← Back to main site</a>
+    </div>
+  </footer>
+
+</body>
+</html>
