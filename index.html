@@ -64,14 +64,28 @@
 
     /* HERO */
     .hero {
-      background: white;
-      padding: 140px 24px 16px;
+      background: url('WhatsApp Image 2026-07-13 at 17.10.27.jpeg') center center / cover no-repeat;
+      position: relative;
+      padding: 140px 24px 80px;
       text-align: center;
       position: relative;
       overflow: hidden;
       border-bottom: 1px solid var(--border);
     }
     .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 0;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero h1 { color: white !important; }
+    .hero h1 span { color: white !important; -webkit-text-fill-color: white !important; background: none !important; }
+    .hero p { color: rgba(255,255,255,0.85) !important; }
+    .hero-badge { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: white; }
+    .hero-badge-dot { background: white; }
+    .OLD-hero::before {
       content: '';
       position: absolute;
       top: -200px; left: 50%; transform: translateX(-50%);
@@ -242,7 +256,14 @@
     .feature-desc { font-size: 13px; color: var(--slate); line-height: 1.6; }
 
     /* DIFFERENT */
-    .different { padding: 56px 24px; background: var(--off-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .different { padding: 56px 24px; background: url('crowd.jpeg') center center / cover no-repeat; position: relative; border-top: none; border-bottom: none; }
+    .different::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.6); z-index: 0; }
+    .different .container { position: relative; z-index: 1; }
+    .different .section-eyebrow { color: rgba(255,255,255,0.7); }
+    .different .section-title, .different .different-body, .different .section-sub { color: white !important; }
+    .different .different-card { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+    .different .different-card-title { color: white; }
+    .different .different-card-body { color: rgba(255,255,255,0.75); }
     .different-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
     .different-text .section-header { text-align: left; margin-bottom: 32px; }
     .different-text .section-sub { margin: 0; max-width: 100%; }
@@ -257,6 +278,7 @@
       flex-shrink: 0; margin-top: 1px;
     }
     .check-text { font-size: 14px; color: var(--ink); font-weight: 500; line-height: 1.5; }
+    .different .check-text { color: white !important; }
     .different-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .diff-card {
       background: white; border: 1px solid var(--border);
@@ -720,7 +742,7 @@
           <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="Kate-busby.jpeg" alt="Kate Busby" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
           <div class="amb-name">Kate Busby</div>
           <div class="amb-spec" style="color:#3B7BF6;">AI-Native Growth Expert</div>
-          <div class="amb-bio">Helping founders grow faster using AI-first strategies and systems.</div>
+          <div class="amb-bio">Helping founders grow faster using AI-first strategies and systems. Kate specialises in turning early-stage ideas into scalable growth engines with AI at the core.</div>
           <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
         </div>
 
@@ -728,7 +750,7 @@
           <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="Katya-Dominguez.jpeg" alt="Katya Dominguez" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
           <div class="amb-name">Katya Dominguez</div>
           <div class="amb-spec" style="color:#3B7BF6;">Founder & CEO</div>
-          <div class="amb-bio">Serial founder building at the intersection of AI and entrepreneurship.</div>
+          <div class="amb-bio">Serial founder building at the intersection of AI and entrepreneurship. Katya brings hard-won experience launching and scaling ventures across multiple industries.</div>
           <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
         </div>
 
@@ -736,7 +758,7 @@
           <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="katja-rubin.jpeg" alt="Katja Rubin" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
           <div class="amb-name">Katja Rubin</div>
           <div class="amb-spec" style="color:#3B7BF6;">Head of AI Education</div>
-          <div class="amb-bio">Making AI practical and accessible for entrepreneurs and teams.</div>
+          <div class="amb-bio">Making AI practical and accessible for entrepreneurs and teams. Katja designs learning frameworks that take people from curious to confident in record time.</div>
           <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
         </div>
 
@@ -744,7 +766,7 @@
           <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="lauren-peikert.jpeg" alt="Lauren Peikert" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
           <div class="amb-name">Lauren Peikert</div>
           <div class="amb-spec" style="color:#3B7BF6;">Growth Marketing & AI Automation</div>
-          <div class="amb-bio">Scaling brands through AI-powered marketing and automation systems.</div>
+          <div class="amb-bio">Scaling brands through AI-powered marketing and automation systems. Lauren helps businesses cut through noise and build growth systems that actually compound.</div>
           <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
         </div>
 
@@ -752,7 +774,7 @@
           <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="Patrick-Farrell.jpeg" alt="Patrick Farrell" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
           <div class="amb-name">Patrick Farrell</div>
           <div class="amb-spec" style="color:#3B7BF6;">Tech Founder & Business Mentor</div>
-          <div class="amb-bio">Connecting founders with the right people, ideas, and opportunities.</div>
+          <div class="amb-bio">Connecting founders with the right people, ideas, and opportunities. Patrick has built an extraordinary network across the tech and startup world and opens doors others can't.</div>
           <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
         </div>
 
@@ -760,7 +782,7 @@
           <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="matthias-kupka.jpeg" alt="Matthias Kupka" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
           <div class="amb-name">Matthias Kupka</div>
           <div class="amb-spec" style="color:#3B7BF6;">Lead Generation Specialist</div>
-          <div class="amb-bio">Building high-converting lead gen systems for ambitious businesses.</div>
+          <div class="amb-bio">Building high-converting lead gen systems for ambitious businesses. Matthias combines deep funnel expertise with cutting-edge AI tools to drive consistent, predictable pipeline.</div>
           <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
         </div>
 
@@ -768,7 +790,7 @@
           <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="Max-Matronin.jpeg" alt="Max Matronin" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
           <div class="amb-name">Max Matronin</div>
           <div class="amb-spec" style="color:#3B7BF6;">Expert AI Developer</div>
-          <div class="amb-bio">Building custom AI solutions and integrations for founders and teams.</div>
+          <div class="amb-bio">Building custom AI solutions and integrations for founders and teams. Max takes complex technical problems and turns them into clean, deployable products that actually work.</div>
           <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
         </div>
 
@@ -776,7 +798,7 @@
           <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="Surya-Sanchez.jpeg" alt="Surya Sanchez" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
           <div class="amb-name">Surya Sanchez</div>
           <div class="amb-spec" style="color:#3B7BF6;">AI Automation Expert</div>
-          <div class="amb-bio">Automating workflows so founders can focus on what matters most.</div>
+          <div class="amb-bio">Automating workflows so founders can focus on what matters most. Surya builds AI-powered systems that eliminate repetitive work and free up time for high-leverage decisions.</div>
           <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
         </div>
 
@@ -784,7 +806,7 @@
           <div class="amb-avatar" style="background:none;border:none;overflow:hidden;"><img src="Greg-Olmstead.jpeg" alt="Greg Olmstead" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div>
           <div class="amb-name">Greg Olmstead</div>
           <div class="amb-spec" style="color:#3B7BF6;">Architect, Author & Engineer</div>
-          <div class="amb-bio">Multi-disciplinary builder turning complex ideas into real products.</div>
+          <div class="amb-bio">Multi-disciplinary builder turning complex ideas into real products. Greg brings together architecture, engineering, and entrepreneurship to build things that are both bold and functional.</div>
           <a href="https://linkedin.com/in/REPLACE" target="_blank" class="amb-link">LinkedIn →</a>
         </div>
 
