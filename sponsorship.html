@@ -71,17 +71,27 @@
     .hero {
       padding: 140px 24px 80px;
       text-align: center;
-      background: white;
+      background: url('crowd.jpeg') center center / cover no-repeat;
       border-bottom: 1px solid var(--border);
       position: relative; overflow: hidden;
     }
     .hero::before {
       content: '';
-      position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
-      width: 900px; height: 600px;
-      background: radial-gradient(ellipse at center, rgba(59,123,246,0.07) 0%, transparent 70%);
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.62);
       pointer-events: none;
     }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero .hero-badge { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: white; }
+    .hero h1 { color: white !important; }
+    .hero h1 span {
+      background: none !important;
+      -webkit-background-clip: unset !important;
+      background-clip: unset !important;
+      -webkit-text-fill-color: #60A5FA !important;
+      color: #60A5FA !important;
+    }
+    .hero p { color: rgba(255,255,255,0.8) !important; }
     .hero-inner { max-width: 760px; margin: 0 auto; position: relative; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
@@ -111,7 +121,7 @@
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
     /* SECTION HEADER */
-    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-header { text-align: center; margin-bottom: 32px; }
     .section-eyebrow {
       display: block; font-size: 11px; font-weight: 700;
       letter-spacing: 0.12em; text-transform: uppercase;
@@ -121,7 +131,7 @@
     .section-sub { font-size: 16px; color: var(--slate); line-height: 1.6; max-width: 560px; margin: 0 auto; }
 
     /* REACH STATS */
-    .reach { padding: 80px 24px; background: var(--off-white); border-bottom: 1px solid var(--border); }
+    .reach { padding: 40px 24px; background: var(--off-white); border-bottom: 1px solid var(--border); }
     .reach-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
       max-width: 900px; margin: 0 auto;
@@ -136,7 +146,7 @@
     .reach-label { font-size: 13px; color: var(--slate); font-weight: 500; }
 
     /* TIERS */
-    .tiers { padding: 96px 24px; background: white; }
+    .tiers { padding: 40px 24px; background: white; }
     .tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .tier-card {
       border-radius: var(--radius-lg); padding: 36px 28px;
@@ -184,7 +194,7 @@
     .tier-card.featured .tier-cta:hover { background: var(--blue-dark); }
 
     /* WHAT YOU GET */
-    .benefits { padding: 96px 24px; background: var(--off-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .benefits { padding: 40px 24px; background: var(--off-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .benefit-card {
       background: white; border: 1px solid var(--border);
@@ -195,7 +205,7 @@
     .benefit-desc { font-size: 13px; color: var(--slate); line-height: 1.6; }
 
     /* WHO ATTENDS */
-    .audience { padding: 96px 24px; background: white; }
+    .audience { padding: 40px 24px; background: white; }
     .audience-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     .audience-card {
       background: var(--off-white); border: 1px solid var(--border);
@@ -206,7 +216,7 @@
 
     /* CTA */
     .cta-section {
-      padding: 96px 24px; background: white;
+      padding: 40px 24px; background: white;
       border-top: 1px solid var(--border); text-align: center;
     }
     .cta-inner { max-width: 600px; margin: 0 auto; }
@@ -245,7 +255,7 @@
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      .tiers-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .tiers-grid { grid-template-columns: repeat(3, 1fr); }
       .reach-grid { grid-template-columns: repeat(2, 1fr); }
       .benefits-grid { grid-template-columns: 1fr; }
       .audience-grid { grid-template-columns: repeat(2, 1fr); }
@@ -271,8 +281,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-badge">🤝 Sponsorship Opportunities</div>
-      <h1>Reach <span>Barcelona's Most Active</span> Entrepreneur Community</h1>
+<h1>Reach <span>Barcelona's Most Active</span> Entrepreneur Community</h1>
       <p>Put your brand in front of 2,000+ in-person attendees every month and over 50,000 community members across our digital channels.</p>
       <a href="mailto:bcndigitalnomads@gmail.com" class="btn-primary">Enquire About Sponsorship →</a>
     </div>
@@ -316,6 +325,49 @@
           <div class="reach-icon">📢</div>
           <div class="reach-num">20,000<span>+</span></div>
           <div class="reach-label">Monthly paid social reach in Barcelona</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SPONSOR -->
+  <section class="benefits">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Why BDN</span>
+        <h2 class="section-title">This isn't just an audience. It's a community.</h2>
+        <p class="section-sub">BDN members are active, engaged, and passionate about building businesses. They respond to brands that show up with them.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🏙</div>
+          <div class="benefit-title">Real In-Person Access</div>
+          <div class="benefit-desc">2,000 people show up physically every month. Your brand is in the room — not just on a screen. Real conversations, real connections, real impact.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🎯</div>
+          <div class="benefit-title">Hyper-Targeted Audience</div>
+          <div class="benefit-desc">Entrepreneurs, founders, freelancers, and digital nomads — people with purchasing power and a bias for action. Not passive scrollers.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📊</div>
+          <div class="benefit-title">Multi-Channel Exposure</div>
+          <div class="benefit-desc">Newsletter, Instagram, WhatsApp, Meetup, paid ads, and in-person events — your brand reaches this audience across every touchpoint.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🤝</div>
+          <div class="benefit-title">Trusted Community Endorsement</div>
+          <div class="benefit-desc">When BDN recommends a brand, members listen. Our community trusts us — and that trust transfers directly to our sponsors.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📈</div>
+          <div class="benefit-title">Growing Every Month</div>
+          <div class="benefit-desc">BDN has grown consistently for years. As a sponsor, you grow with us — and your visibility increases as our community does.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🌍</div>
+          <div class="benefit-title">International Reach</div>
+          <div class="benefit-desc">Our community is global — digital nomads and expat entrepreneurs from across Europe and beyond. Ideal for brands with an international angle.</div>
         </div>
       </div>
     </div>
@@ -397,49 +449,6 @@
           <a href="mailto:bcndigitalnomads@gmail.com?subject=Headline Sponsor Enquiry" class="tier-cta">Enquire Now →</a>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY SPONSOR -->
-  <section class="benefits">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">Why BDN</span>
-        <h2 class="section-title">This isn't just an audience. It's a community.</h2>
-        <p class="section-sub">BDN members are active, engaged, and passionate about building businesses. They respond to brands that show up with them.</p>
-      </div>
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <div class="benefit-icon">🏙</div>
-          <div class="benefit-title">Real In-Person Access</div>
-          <div class="benefit-desc">2,000 people show up physically every month. Your brand is in the room — not just on a screen. Real conversations, real connections, real impact.</div>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">🎯</div>
-          <div class="benefit-title">Hyper-Targeted Audience</div>
-          <div class="benefit-desc">Entrepreneurs, founders, freelancers, and digital nomads — people with purchasing power and a bias for action. Not passive scrollers.</div>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">📊</div>
-          <div class="benefit-title">Multi-Channel Exposure</div>
-          <div class="benefit-desc">Newsletter, Instagram, WhatsApp, Meetup, paid ads, and in-person events — your brand reaches this audience across every touchpoint.</div>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">🤝</div>
-          <div class="benefit-title">Trusted Community Endorsement</div>
-          <div class="benefit-desc">When BDN recommends a brand, members listen. Our community trusts us — and that trust transfers directly to our sponsors.</div>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">📈</div>
-          <div class="benefit-title">Growing Every Month</div>
-          <div class="benefit-desc">BDN has grown consistently for years. As a sponsor, you grow with us — and your visibility increases as our community does.</div>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">🌍</div>
-          <div class="benefit-title">International Reach</div>
-          <div class="benefit-desc">Our community is global — digital nomads and expat entrepreneurs from across Europe and beyond. Ideal for brands with an international angle.</div>
-        </div>
       </div>
     </div>
   </section>
