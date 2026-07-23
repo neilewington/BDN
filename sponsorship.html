@@ -147,7 +147,7 @@
 
     /* TIERS */
     .tiers { padding: 40px 24px; background: white; }
-    .tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .tiers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
     .tier-card {
       border-radius: var(--radius-lg); padding: 36px 28px;
       border: 2px solid var(--border); position: relative;
@@ -255,7 +255,7 @@
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      .tiers-grid { grid-template-columns: repeat(3, 1fr); }
+      .tiers-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
       .reach-grid { grid-template-columns: repeat(2, 1fr); }
       .benefits-grid { grid-template-columns: 1fr; }
       .audience-grid { grid-template-columns: repeat(2, 1fr); }
@@ -379,14 +379,33 @@
       <div class="section-header">
         <span class="section-eyebrow">Sponsorship packages</span>
         <h2 class="section-title">Choose your level of visibility</h2>
-        <p class="section-sub">Three tiers designed to fit different budgets and goals — from brand awareness to deep community integration.</p>
+        <p class="section-sub">Four tiers designed to fit different budgets and goals — from a single event to deep community integration.</p>
       </div>
       <div class="tiers-grid">
+
+        <!-- SINGLE EVENT SPONSOR -->
+        <div class="tier-card">
+          <div class="tier-icon">🎟️</div>
+          <div class="tier-name">Tier 0</div>
+          <div class="tier-title">Single Event Sponsor</div>
+          <div class="tier-price">
+            <div class="tier-price-num">€200</div>
+            <div class="tier-price-period">one event</div>
+          </div>
+          <div class="tier-divider"></div>
+          <ul class="tier-features">
+            <li><span class="check">✓</span> Branded presence at one in-person event</li>
+            <li><span class="check">✓</span> Logo on event materials and signage</li>
+            <li><span class="check">✓</span> Shoutout in our WhatsApp community (7,100+ members)</li>
+            <li><span class="check">✓</span> Mention in the event's Instagram post</li>
+          </ul>
+          <a href="mailto:bcndigitalnomads@gmail.com?subject=Single Event Sponsor Enquiry" class="tier-cta">Enquire Now →</a>
+        </div>
 
         <!-- COMMUNITY SPONSOR -->
         <div class="tier-card">
           <div class="tier-icon">🥉</div>
-          <div class="tier-name">Tier 1</div>
+          <div class="tier-name">Tier 2</div>
           <div class="tier-title">Community Sponsor</div>
           <div class="tier-price">
             <div class="tier-price-num">€500</div>
@@ -407,7 +426,7 @@
         <div class="tier-card featured">
           <div class="tier-badge">Most Popular</div>
           <div class="tier-icon">🥈</div>
-          <div class="tier-name">Tier 2</div>
+          <div class="tier-name">Tier 3</div>
           <div class="tier-title">Event Partner</div>
           <div class="tier-price">
             <div class="tier-price-num">€1,500</div>
@@ -429,7 +448,7 @@
         <!-- HEADLINE SPONSOR -->
         <div class="tier-card">
           <div class="tier-icon">🥇</div>
-          <div class="tier-name">Tier 3</div>
+          <div class="tier-name">Tier 4</div>
           <div class="tier-title">Headline Sponsor</div>
           <div class="tier-price">
             <div class="tier-price-num">€3,500</div>
