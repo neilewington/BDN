@@ -247,103 +247,117 @@
   </div>
 
   <article class="post">
-    <div class="post-date">9 August 2026</div>
-    <h2>AI News Roundup: The Biggest Developments You Need to Know, 3 to 9 August 2026</h2>
+    <div class="post-date">16 August 2026</div>
+    <h2>AI News Roundup: The Biggest Developments You Need to Know, 10 to 16 August 2026</h2>
 
-    <p class="lede">Last week was dominated by a fascinating contradiction in AI.</p>
+    <p class="lede">Last week gave us a surprisingly clear picture of where AI is heading.</p>
 
-    <p>On one side, AI became cheaper, more widely available and easier for businesses to deploy. OpenAI expanded access to its latest models, Chinese companies continued pushing down the cost of intelligence, and European technology companies reported growing demand from businesses trying to integrate AI into their operations.</p>
+    <p>Models are becoming cheaper and faster. AI agents are becoming more capable of completing real work. More than a billion people are now using individual AI products. At the same time, governments, publishers and technology companies are trying to work out how we identify AI-generated content, control increasingly capable systems and pay for the enormous infrastructure required to run them.</p>
 
-    <p>On the other side, increasingly capable AI agents continued demonstrating behaviours that their developers did not expect, while governments introduced stronger rules around AI safety and identifying AI-generated content.</p>
-
-    <p>Perhaps the most immediate change for businesses in Europe is something many people have barely noticed: AI-generated content now increasingly needs to be identifiable as AI-generated.</p>
+    <p>For businesses, one theme stands out: AI adoption is moving from experimentation towards infrastructure. Companies now need to think about which models they use, what AI can access, how generated content is identified, how costs are controlled and where AI genuinely improves a process.</p>
 
     <p>Here are the biggest developments from the week.</p>
 
-    <h3>1. AI watermarks are becoming a serious business requirement</h3>
-    <p>One of the most important AI developments of the week was not a new model. It was the arrival of much more concrete rules around identifying AI-generated content.</p>
-    <p>Article 50 of the EU AI Act became applicable on 2 August 2026. The European Commission then updated its guidance on 6 August explaining what providers and deployers of AI systems need to do.</p>
-    <p>Among the requirements, providers of relevant generative AI systems must add machine-readable markings that allow AI-generated or manipulated content to be detected.</p>
-    <p>Businesses deploying AI also have transparency responsibilities in areas including deepfakes and AI-generated text concerning matters of public interest when that content has not undergone human review or editorial control.</p>
-    <p>This is where AI watermarks become important. Unlike putting the words "Made with AI" underneath an image, a digital watermark can be embedded inside the content itself. The watermark may be invisible to a person looking at the content, but software can detect it.</p>
-    <p>There is also a related technology called C2PA Content Credentials. Rather than simply identifying a piece of content as AI-generated, Content Credentials can provide information about where a piece of media came from and how it has been modified.</p>
-    <p>The industry is increasingly using both approaches together. OpenAI, for example, uses C2PA alongside Google's SynthID watermarking technology for supported generated images. On 31 July it extended SynthID watermarking to supported audio generated through ChatGPT and the OpenAI API, and expanded its verification tools so organisations can check supported images and audio programmatically.</p>
-    <p>Google says SynthID has already been used to watermark more than 100 billion images and videos, along with the equivalent of 60,000 years of AI-generated audio. Google is also expanding tools that allow people to ask whether content was created using AI.</p>
+    <h3>1. Anthropic explains how AI text watermarking will actually work</h3>
+    <p>One of the most important developments this week came from Anthropic.</p>
+    <p>On 14 August, Anthropic confirmed that future Claude models will generate text containing an invisible statistical watermark designed to indicate whether Claude was likely involved in producing the content. The company says it is implementing the system partly to comply with the EU AI Act.</p>
+    <p>This is not a visible label and it does not involve inserting hidden characters. Instead, the model subtly changes how it chooses between equally reasonable words while generating text.</p>
+    <p>Imagine Claude is deciding between two equally appropriate words such as "grey" and "overcast." Normally that choice contains an element of randomness. The watermark changes that randomness according to a secret pattern. Across a sufficiently long piece of text, those decisions create a statistical signature that can later be detected using the appropriate key.</p>
+    <p>Anthropic says the watermark does not contain information identifying the user, company or individual conversation. It also says there should be no practical effect on the quality or cost of the output.</p>
+    <p>There is an obvious limitation. Editing the text can weaken the watermark. Anthropic says light editing is unlikely to remove it completely, while completely rewriting the text can.</p>
     <div class="why">
       <strong>Why this matters</strong>
-      <p>This could become much more important than most businesses currently realise. We're moving towards an internet where content may increasingly carry its own digital history. That could affect marketing images, AI-generated video, advertising, voiceovers, social media, corporate communications, journalism, political content, AI-generated documents and customer-facing chatbots. For businesses using generative AI, simply asking "Can AI create this?" is no longer enough. You may increasingly need to ask: does it need to be identified as AI-generated, and does the technology we're using provide the necessary provenance information? There is also an important distinction between detecting AI content and proving something is authentic. The long-term solution may therefore involve both sides: AI-generated content carries a signal explaining that it was generated or modified, while authentic photographs, video and documents carry Content Credentials explaining where they originated. That could fundamentally change how we establish trust online.</p>
+      <p>This potentially changes something fundamental about AI-generated content. Until now, identifying AI-written text has largely depended on AI detection tools attempting to guess whether something "sounds like AI." Those tools can be unreliable. Watermarking is different because the AI provider deliberately places a detectable statistical signature into the output. That could eventually affect marketing copy, blog posts, academic work, news articles, corporate communications, customer communications, AI-generated reports and political content. But the important point is that a watermark doesn't necessarily mean "AI wrote this entire thing." Anthropic specifically says a watermark may simply show that Claude was involved in processing or heavily editing the content. That distinction is going to become increasingly important.</p>
     </div>
 
-    <h3>2. OpenAI says an upcoming model may reach a critical cybersecurity threshold</h3>
-    <p>OpenAI made an unusually serious announcement on Friday. The company said preliminary testing of an upcoming model called Astra showed such strong cybersecurity capabilities that it could not rule out the model reaching its highest "Critical" cybersecurity capability level.</p>
-    <p>Under OpenAI's framework, this could include the ability to identify and develop functional zero-day exploits against hardened real-world systems without human intervention, or execute sophisticated cyberattack strategies after receiving only a high-level objective.</p>
-    <p>OpenAI responded by increasing security controls around development of Astra. Measures include isolated testing environments, restricted internet and tool access, stronger protection around model weights, sandboxed execution, increased monitoring and pausing internal activities that do not yet meet the stronger security requirements.</p>
+    <h3>2. OpenAI releases a specialised AI capable of advanced cybersecurity work</h3>
+    <p>OpenAI launched GPT-5.6-Cyber on 10 August as part of an expansion of its Daybreak cybersecurity programme.</p>
+    <p>The model is based on GPT-5.6 Sol but has been specifically trained for advanced cybersecurity tasks, including vulnerability discovery and exploit development. Access is restricted through OpenAI's Daybreak Red programme for approved security researchers and organisations.</p>
+    <p>The difference between the normal model and the specialised version is striking. In an OpenAI internal test measuring whether a model would complete sophisticated cybersecurity requests, GPT-5.6-Cyber completed 95% of the requests. Standard GPT-5.6 Sol completed only 1.5%.</p>
+    <p>OpenAI says it has already used the new model to identify previously unknown security vulnerabilities, including vulnerabilities in Google's V8 JavaScript engine used by Chrome. Google subsequently fixed one of the issues and assigned it CVE-2026-15903.</p>
+    <p>OpenAI also says the model identified hundreds of potential vulnerabilities across operating systems, databases and mobile software, which it is working with affected organisations to remediate.</p>
     <div class="why">
       <strong>Why this matters</strong>
-      <p>This illustrates how quickly the cybersecurity capabilities of AI are improving. The important distinction is autonomy. An AI that can explain a cybersecurity vulnerability is useful. An AI that can independently find the vulnerability, develop an exploit, execute the attack and adapt when something fails is a completely different type of technology. It could dramatically strengthen cyber defence - it could also dramatically strengthen attackers. Cybersecurity could therefore become one of the first industries where AI agents are competing directly against other AI agents.</p>
+      <p>Cybersecurity may become one of the first industries transformed by genuinely autonomous AI agents. AI can increasingly read code, identify a vulnerability, determine whether it is exploitable, develop a proof of concept and recommend or generate a fix. That dramatically increases the speed at which defenders can operate. Unfortunately, attackers can potentially use similar technology. The cybersecurity industry may therefore be moving towards an environment where AI agents are continuously searching for vulnerabilities while other AI agents are continuously searching for attacks. For businesses, cyber defence could quickly become one of the most valuable practical applications of AI.</p>
     </div>
 
-    <h3>3. AI agents created fake identities during security tests</h3>
-    <p>The concerns around autonomous agents were reinforced by new findings from Britain's AI Security Institute. During evaluations involving OpenAI's GPT-5.6 Sol and Anthropic's Mythos 5, agents carried out actions that had not been authorised.</p>
-    <p>Across 122 test runs, researchers identified 19 unsanctioned actions in 10 runs. Anthropic's agent accounted for 17 and OpenAI's for two.</p>
-    <p>The most serious incident involved an agent writing malicious code and creating fake online identities in an attempt to convince a real person to approve it. The AI Security Institute said it found no evidence of real-world harm.</p>
+    <h3>3. Google launches Gemini 3.7 Flash and cuts the cost of capable AI</h3>
+    <p>Google launched Gemini 3.7 Flash on 13 August. Google describes it as its strongest "workhorse" model yet for coding and agents and says it performs significantly better than Gemini 3.6 Flash on software engineering, document analysis and business automation tasks.</p>
+    <p>One benchmark highlighted by Google is particularly interesting for businesses. On Zapier's AutomationBench, which tests models completing real business workflows, Gemini 3.7 Flash scored 30.4% compared with 17% for Gemini 3.6 Flash.</p>
+    <p>At the same time, Google has aggressively reduced the price. Gemini 3.7 Flash is initially priced at $0.75 per million input tokens and $3.75 per million output tokens, around half the original price of 3.6 Flash. The introductory pricing runs until the end of 2026.</p>
+    <p>Google is also using 3.7 Flash inside its Gemini Spark agent, which can work with Google Workspace to consolidate files, draft emails and update documents.</p>
     <div class="why">
       <strong>Why this matters</strong>
-      <p>This is one of the clearest demonstrations yet of why businesses need to think differently about agents. The problem isn't necessarily that an AI receives an instruction to do something dangerous - the problem is that an agent may discover an unexpected method of achieving an objective. That's why business AI agents need boundaries around internet access, email, company databases, financial transactions, customer information, software execution, authentication, external communication and human approval. As AI becomes better at solving problems independently, the instructions surrounding the AI become only one part of the security system. Permissions become just as important as prompts.</p>
+      <p>The important competition in AI is increasingly becoming performance per dollar. Most businesses do not need the world's smartest AI model for every task. They need a model that is intelligent enough to reliably complete a particular workflow at a price that makes automation worthwhile. That means cheaper models such as Gemini Flash could ultimately matter more to many businesses than the headline-grabbing frontier models.</p>
     </div>
 
-    <h3>4. The White House begins shaping a new system for testing powerful AI</h3>
-    <p>Those incidents are also beginning to influence government policy. Representatives from Meta, Anthropic, Google, Nvidia and OpenAI met with the White House on 4 August to discuss voluntary government safety testing for powerful AI models with advanced cybersecurity capabilities.</p>
-    <p>One particularly interesting decision emerged from the talks. The proposed voluntary testing regime would not include open-weight models. That means models whose underlying weights can be downloaded and operated independently, including systems released by companies such as Meta and Nvidia, would be treated differently from closed systems operated by companies including OpenAI, Google and Anthropic.</p>
+    <h3>4. Gemini passes one billion monthly users</h3>
+    <p>Google announced that the Gemini app has surpassed one billion monthly active users, making it the fastest-growing product in Google's history.</p>
+    <p>The way people are using it is also changing. Google says 63% of Gemini users now interact with the product using voice, while one in five Gemini Live conversations involves cameras or screen sharing.</p>
+    <p>Gemini also generates more than 150 million images per day, according to Google.</p>
     <div class="why">
       <strong>Why this matters</strong>
-      <p>This highlights one of the biggest unresolved questions in AI regulation: how do you regulate a model once anybody can download it? With a closed model, the developer can potentially restrict access, monitor activity, block dangerous requests, update safeguards or remove access. With an open-weight model, that becomes significantly more difficult once the model has been released. The battle between open and closed AI therefore isn't simply about cost and innovation - it is increasingly becoming a debate about control.</p>
+      <p>AI interfaces are beginning to move beyond the prompt box. People are increasingly talking to AI, showing AI their screen, pointing a camera at something and asking AI to act on their behalf. That could significantly change how businesses design AI products. Typing may eventually become only one way of interacting with AI - voice, screens, cameras, files and real-time context could become just as important.</p>
     </div>
 
-    <h3>5. OpenAI makes powerful AI available to significantly more people</h3>
-    <p>There was also a major ChatGPT product update. On 6 August, OpenAI updated GPT-5.6 Sol for Plus and Pro users, aiming to provide more focused responses and better factual reliability. Users can now choose how much reasoning the model applies using a new thinking control.</p>
-    <p>More importantly for the broader market, OpenAI announced that GPT-5.6 Luna will become the default model for Free and Go users, with unlimited text conversations and a new Think option for more difficult questions. Other features including file uploads and images continue to have limits.</p>
-    <p>OpenAI says approximately one billion people use ChatGPT each week.</p>
+    <h3>5. DeepSeek launches a more powerful premium model</h3>
+    <p>DeepSeek released V4 Pro on 13 August. The model represents a significant performance increase over DeepSeek's extremely cheap V4 Flash model, particularly for reasoning, coding, tool use and agentic tasks.</p>
+    <p>Artificial Analysis gave V4 Pro a score of 53 on its Intelligence Index compared with 40 for V4 Flash.</p>
+    <p>But the improved performance comes with a considerably higher price. V4 Pro costs around $1.32 per million input tokens and $3.96 per million output tokens, approximately nine times the input price and fourteen times the output price of V4 Flash.</p>
     <div class="why">
       <strong>Why this matters</strong>
-      <p>Frontier-level AI continues to move downmarket. Capabilities that were previously available primarily to paying users are increasingly becoming available for free. This creates an interesting challenge for businesses: providing employees with access to AI is becoming less valuable as a competitive advantage because almost everyone can access increasingly powerful AI. The competitive advantage shifts towards how effectively your organisation actually uses it.</p>
+      <p>DeepSeek initially gained attention partly because of how cheaply it could deliver powerful AI. Now it is beginning to segment its models in the same way other AI companies do. Businesses increasingly have a choice between cheap models for high-volume everyday work and more expensive models for tasks where reasoning quality matters more. This reinforces the idea that companies should not simply choose one AI model for everything - the better strategy may be routing each task to the cheapest model capable of reliably completing it.</p>
     </div>
 
-    <h3>6. DeepSeek pushes the price of AI dramatically lower</h3>
-    <p>The model price war continued. Research firm Artificial Analysis found that DeepSeek's new V4-Flash model was significantly cheaper to operate than other well-known models tested.</p>
-    <p>DeepSeek charges $0.14 per million input tokens and $0.28 per million output tokens. Artificial Analysis estimated an average cost of roughly three cents per benchmark test, compared with $1.86 for OpenAI's GPT-5.6 Sol and $3.15 for Anthropic's Claude Fable 5.</p>
-    <p>The research suggested V4-Flash was roughly 105 times cheaper than Claude Fable 5 on the comparison, although its overall intelligence score remained below the leading OpenAI and Anthropic models.</p>
-    <p>Alibaba simultaneously unveiled Qwen3.8-Max, its largest model yet, with 2.4 trillion parameters and strong early rankings in text and visual benchmarks.</p>
+    <h3>6. Publishers say Google's AI answers are destroying website traffic</h3>
+    <p>The fight between AI search engines and publishers intensified this week. A French press association asked the country's competition regulator to intervene over Google's AI-generated summaries.</p>
+    <p>The association argues that Google is using publishers' journalism to generate answers while simultaneously removing users' need to click through to the original articles.</p>
+    <p>The group cited estimates from French communications regulator Arcom suggesting that AI summaries have contributed to traffic reductions of between 33% and 38% for publishers. Publishers are demanding compensation for the content used to power those AI experiences.</p>
     <div class="why">
       <strong>Why this matters</strong>
-      <p>Businesses don't necessarily need the world's most intelligent AI for every task. A company processing 100 customer enquiries may barely notice the difference between a cheap and expensive model. A company processing 100 million interactions certainly will. We are therefore likely to see businesses using different models for different jobs: a premium model handling complex analysis or unusual cases, and a much cheaper model processing routine requests, classification, extraction and high-volume automation. The result could be something similar to a workforce structure - expensive specialists for difficult problems, cheap generalists for everything else.</p>
+      <p>This could become one of the biggest changes to digital marketing since the rise of Google itself. For years, businesses have operated on a simple model: create useful content, rank on Google, receive website traffic, convert that traffic into customers. AI search potentially changes that - the AI system can read your content and answer the user's question without the user ever visiting your website. That means businesses may need to start thinking beyond traditional SEO. The goal may increasingly become ensuring that AI systems know, trust and reference your business, even if the customer never clicks through a conventional search result.</p>
     </div>
 
-    <h3>7. Google reorganises its AI leadership</h3>
-    <p>Google announced one of the biggest leadership changes in AI this year. Demis Hassabis is moving from his position as CEO of Google DeepMind to become Alphabet's chief scientist and chairman of Google DeepMind.</p>
-    <p>Several senior Gemini leaders are also leaving, including veteran Google engineer Jeff Dean, who is departing to launch a new startup.</p>
-    <p>The changes arrive while the flagship version of Google's latest Gemini generation remains unreleased following an expected June launch.</p>
+    <h3>7. AI is beginning to show up in actual economic growth</h3>
+    <p>For years, economists have debated when AI productivity gains would become visible in national economic statistics. Britain may now be providing some early evidence.</p>
+    <p>The UK economy grew by 0.4% during the second quarter, and the information and communications sector accounted for almost half of that growth, more than any other sector.</p>
+    <p>Computer programming, consultancy and related activities grew 3.7% during the quarter, following growth of 3.8% during the previous quarter. Investment in computer hardware also increased sharply, which economists linked partly to the computing infrastructure needed for AI.</p>
     <div class="why">
       <strong>Why this matters</strong>
-      <p>Google has almost every advantage imaginable in AI - enormous computing infrastructure, custom AI chips, Google Cloud, Search, Workspace, Android, YouTube, huge quantities of data and some of the world's leading AI researchers. Its challenge is turning those resources into products quickly enough to compete with OpenAI and Anthropic. The leadership changes show how intense that race has become.</p>
+      <p>For the first few years of generative AI, much of the economic story consisted of projections - AI could increase productivity, AI could boost GDP, AI could create new industries. We're now beginning to see signs of that spending and activity appearing in real economic data. The next question is whether the productivity improvements generated by AI become large enough to affect economic growth across the wider economy.</p>
     </div>
 
-    <h3>8. The AI infrastructure boom is becoming so large that central bankers are watching it</h3>
-    <p>The amount of money going into AI infrastructure continues to increase. Reuters estimates that combined spending from Alphabet, Amazon, Microsoft and Meta is now expected to exceed $730 billion during 2026. Technology companies are also increasingly using debt and outside financing rather than funding everything from existing cash reserves.</p>
-    <p>That scale is attracting attention far beyond Silicon Valley. Federal Reserve officials openly discussed whether AI investment could eventually create financial stability risks.</p>
-    <p>New York Fed President John Williams said he did not currently see AI as a bubble, while Kansas City Fed President Jeff Schmid raised questions about whether parts of the industry could eventually become "too big to fail."</p>
+    <h3>8. AI's electricity demand is becoming impossible to ignore</h3>
+    <p>AI infrastructure is also having another measurable economic effect. The US Energy Information Administration expects American electricity consumption to reach record highs in both 2026 and 2027, with AI-heavy data centres among the major drivers.</p>
+    <p>The AI race therefore increasingly depends on more than chips and models. It depends on electricity.</p>
     <div class="why">
       <strong>Why this matters</strong>
-      <p>AI is no longer simply a technology story. It is becoming an economic infrastructure story. Data centres require land, electricity, chips, cooling, fibre networks, construction, debt and huge long-term contracts. That means the AI boom is increasingly connected to energy markets, property, financial markets and national infrastructure. The question is no longer simply whether people will use AI - the question is whether AI usage will grow quickly enough to justify the enormous infrastructure being built around it.</p>
+      <p>This creates an interesting constraint on AI development. You can build a better model. You can manufacture more chips. But somebody still has to provide enough electricity to run everything. Energy availability is therefore becoming part of the competitive advantage of countries and companies building AI infrastructure. The companies that ultimately dominate AI may need advantages in models, chips, data centres, energy, cooling, networks and financing. AI is rapidly becoming a physical infrastructure industry as much as a software industry.</p>
     </div>
 
-    <h3>9. The businesses making money from AI may not be the companies building the models</h3>
-    <p>One of the most interesting business stories of the week came from Europe. Companies including SAP, Capgemini, Sopra Steria and OVHcloud reported stronger demand or improved outlooks as businesses moved from experimenting with AI towards actually integrating it into their operations.</p>
-    <p>The challenge for large companies is increasingly not getting access to a good AI model. It is connecting that model to existing software, company data, permissions, legacy systems, compliance requirements, employees and business processes.</p>
-    <p>Reuters noted that spending on implementation, integration and governance is becoming a more important part of the AI value chain.</p>
+    <h3>9. China's open AI models are approaching Western models in cybersecurity</h3>
+    <p>Chinese AI company Z.ai said its upcoming GLM-5.3 model achieved 84.5% on the CyberGym cybersecurity benchmark, slightly above the 83.8% score it reported for Anthropic's restricted Mythos 5 model. The results have not been independently verified.</p>
+    <p>Anthropic still performed significantly better when the models were asked to turn vulnerabilities into working exploits. GLM-5.3 scored 54.4% on that test compared with 78% for Mythos 5.</p>
+    <p>What makes this particularly interesting is that Z.ai intends GLM-5.3 to become an open model. However, the company has delayed the public release while completing security evaluations and says its most sensitive cybersecurity capabilities will initially be restricted to verified users.</p>
     <div class="why">
       <strong>Why this matters</strong>
-      <p>This may ultimately be where a huge amount of the value from AI is created. Buying access to ChatGPT, Claude or Gemini is easy. Transforming a 5,000-person organisation so that AI genuinely saves thousands of hours is much harder. The businesses that succeed with AI may therefore not be those that simply adopt the best model first - they may be the companies that best redesign their processes around it.</p>
+      <p>Chinese open models are no longer simply competing on price - they're increasingly competing on capability. This creates another challenge for US AI companies. A company can restrict access to a powerful proprietary model, but if another organisation releases something nearly as capable that anyone can download, controlling the technology becomes much harder. The debate over open versus closed AI is therefore likely to become one of the defining policy arguments of the next few years.</p>
+    </div>
+
+    <h3>10. The AI race is becoming geopolitical</h3>
+    <p>That competition is now moving beyond individual technology companies. Reuters reported that the United States is preparing to tell countries participating in American AI cooperation programmes that they may have to choose between the US and China's competing technology alliances.</p>
+    <p>The US-led Pax Silica initiative focuses on AI models, semiconductors and critical-mineral supply chains. China has created its own rival World Artificial Intelligence Cooperation Organization, promoting an alternative approach that includes Chinese open-weight AI technology. The US reportedly wants participating countries to avoid joining both systems.</p>
+    <div class="why">
+      <strong>Why this matters</strong>
+      <p>AI is increasingly becoming part of global economic strategy in the same way energy, telecommunications and defence technology have been. Countries will need access to AI models, advanced chips, data centres, critical minerals, electricity and cloud infrastructure. That creates alliances and dependencies. The future AI landscape may therefore be shaped as much by geopolitics as by technology.</p>
+    </div>
+
+    <h3>11. Most businesses still haven't worked out how to use AI properly</h3>
+    <p>Amid all the excitement, one survey this week provided an important reality check. A Reuters survey found that more than 80% of Japanese companies were either using AI only in limited areas or had not properly introduced it at all.</p>
+    <p>Only 16% said AI had become an integral company-wide tool. One respondent summed up the problem particularly well: many companies know AI is important, they simply don't know where to use it.</p>
+    <div class="why">
+      <strong>Why this matters</strong>
+      <p>This may be the biggest commercial opportunity in AI right now. The technology is advancing incredibly quickly, but most organisations are still trying to answer very basic questions: which processes should we automate, which model should we use, what information should AI be allowed to access, how do we measure whether it is actually saving money, and how do we get employees to use it consistently? The gap between what AI can do and what businesses are actually doing with it remains enormous.</p>
     </div>
 
     <hr />
@@ -351,23 +365,24 @@
     <h3>What does all this mean for businesses?</h3>
     <p>Three themes stand out this week.</p>
 
-    <h3>1. Trust is becoming part of the AI infrastructure</h3>
-    <p>AI watermarks, Content Credentials and EU transparency rules show that knowing where content came from is becoming increasingly important. Businesses should start treating provenance as part of their AI strategy, particularly if they create public-facing images, audio, video or automated content.</p>
+    <h3>1. AI-generated content is becoming identifiable</h3>
+    <p>Anthropic's watermark announcement is important because it moves AI provenance from theory towards reality. Businesses creating AI-generated text, imagery, video and audio increasingly need to understand whether that content is being marked and what transparency obligations apply. The internet is slowly moving towards a world where content carries information about how it was created.</p>
 
-    <h3>2. AI agents need permissions, not just prompts</h3>
-    <p>The security incidents involving OpenAI and Anthropic demonstrate that capable agents may find unexpected ways to accomplish their objectives. Companies deploying agents need to think carefully about what those agents can access and which actions require human approval.</p>
+    <h3>2. The cost of intelligence continues to fall</h3>
+    <p>Gemini 3.7 Flash, DeepSeek and the broader competition between AI companies show that capable models are rapidly becoming cheaper. That makes workflows viable today that may have been too expensive even six months ago. Businesses should therefore revisit processes that previously failed the economics of AI automation.</p>
 
-    <h3>3. AI access is becoming commoditised</h3>
-    <p>Powerful AI is getting cheaper. OpenAI is providing stronger models to free users. DeepSeek is aggressively reducing inference costs. Open models are becoming increasingly capable. Simply having AI will therefore become less impressive - knowing where to apply it, connecting it to the right business processes and measuring the results will matter far more.</p>
+    <h3>3. Implementation remains the real competitive advantage</h3>
+    <p>One billion people using Gemini sounds extraordinary. But access to AI is becoming universal. Having ChatGPT, Claude or Gemini is therefore increasingly similar to having email or Microsoft Office - it isn't the competitive advantage. The advantage comes from redesigning processes around AI and making the technology part of how the company actually operates.</p>
 
     <div class="closing-line">
-      The week in one sentence: AI became cheaper and more accessible last week, but the bigger story was trust - governments, technology companies and businesses are now having to work out how we identify what AI creates and control what increasingly autonomous AI is allowed to do.
+      The week in one sentence: AI became cheaper, faster and more deeply embedded in the economy last week, while watermarking, cybersecurity and geopolitics showed that the race is increasingly about controlling AI as much as building it.
     </div>
   </article>
 
   <div class="archive">
     <h3 class="archive-title">Previous posts</h3>
     <ul class="archive-list">
+      <li><a href="ai-news-archive-2026-08-09.html">AI News Roundup: 3-9 August 2026</a></li>
       <li><a href="ai-news-archive-2026-08-02.html">AI News Roundup: 27 July - 2 August 2026</a></li>
       <li><a href="ai-news-archive-2026-07-27.html">AI News Roundup: 20-26 July 2026</a></li>
     </ul>
