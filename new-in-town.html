@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New in Town — Barcelona Digital Nomads</title>
+  <meta name="description" content="Just landed in Barcelona? Here's how to plug into the Barcelona Digital Nomads community fast." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FFFFFF;
+      --bg-alt: #F3F2EF;
+      --ink: #0C0C0C;
+      --muted: #868686;
+      --border: #E0DFDB;
+      --blue: #1B43F0;
+      --blue-light: #EEF2FF;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    .page { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+    /* HEADER */
+    header {
+      padding: 40px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo img { width: 40px; height: 40px; border-radius: 10px; }
+    .logo-text { font-size: 15px; font-weight: 700; color: var(--ink); letter-spacing: -0.2px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none; }
+    .nav-links a:hover { color: var(--blue); }
+
+    /* TITLE */
+    .title-block { padding: 80px 0 56px; max-width: 700px; }
+    .eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .lede { font-size: 18px; color: var(--muted); line-height: 1.6; max-width: 600px; }
+
+    /* STEPS */
+    .steps { padding-bottom: 60px; }
+    .step {
+      display: flex;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .step:first-child { border-top: 1px solid var(--border); }
+    .step-num {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--blue);
+      min-width: 28px;
+    }
+    .step-title { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+    .step-desc { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 560px; }
+    .step-desc a { color: var(--blue); text-decoration: none; font-weight: 600; }
+    .step-desc a:hover { text-decoration: underline; }
+
+    .nit-box {
+      background: var(--ink);
+      color: #FFFFFF;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .nit-eyebrow {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6); margin-bottom: 8px;
+    }
+    .nit-title { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }
+    .nit-desc { font-size: 14px; color: rgba(255, 255, 255, 0.7); line-height: 1.6; max-width: 520px; }
+    .btn-light {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #FFFFFF; color: var(--ink); text-decoration: none;
+      font-size: 14px; font-weight: 600; padding: 13px 24px; border-radius: 10px;
+      white-space: nowrap;
+    }
+
+    .cta-box {
+      background: var(--blue-light);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .cta-box-text { font-size: 16px; font-weight: 700; max-width: 420px; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue); color: white; text-decoration: none;
+      font-size: 14px; font-weight: 600; padding: 13px 24px; border-radius: 10px;
+      white-space: nowrap;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-left { font-size: 13px; color: var(--muted); }
+    .footer-left a { color: var(--blue); text-decoration: none; }
+    .footer-socials { display: flex; gap: 20px; }
+    .footer-socials a {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+    }
+    .footer-socials a:hover { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .page { padding: 0 20px; }
+      .nav-links { gap: 16px; }
+      .step { flex-direction: column; gap: 8px; }
+      footer { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="BDN Logo" />
+      <span class="logo-text">Barcelona Digital Nomads</span>
+    </a>
+    <nav class="nav-links">
+      <a href="about.html">About Us</a>
+      <a href="mission.html">Mission</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <div class="title-block">
+    <span class="eyebrow">New in Town</span>
+    <h1>Just landed in Barcelona?</h1>
+    <p class="lede">Here's the fastest way to go from knowing nobody to having a whole crew — most people are fully plugged in within their first week.</p>
+  </div>
+
+  <div class="nit-box">
+    <div>
+      <div class="nit-eyebrow">Every two weeks</div>
+      <div class="nit-title">New in Town meetup</div>
+      <div class="nit-desc">Introduce yourself in five minutes, see who else just arrived, and join the WhatsApp group just for new-in-town people.</div>
+    </div>
+    <a href="https://new-in-town-barcelona.lovable.app/" target="_blank" rel="noopener" class="btn-light">Join New in Town →</a>
+  </div>
+
+  <div class="steps">
+
+    <div class="step">
+      <span class="step-num">01</span>
+      <div>
+        <div class="step-title">Come to a Wednesday meetup</div>
+        <div class="step-desc">Our weekly in-person meetup is the easiest way to meet people face to face. No sign-up needed — just show up. Check <a href="index.html#events-link">upcoming events</a> for the next one.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-num">02</span>
+      <div>
+        <div class="step-title">Join the WhatsApp community</div>
+        <div class="step-desc">This is where day-to-day life happens — quick questions, flat shares, and spontaneous plans. Find the link on our <a href="community-hub.html">Community Hub</a>.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-num">03</span>
+      <div>
+        <div class="step-title">Say hello</div>
+        <div class="step-desc">Everyone here was new once. Introduce yourself, ask questions, and don't be shy — this community was built for exactly that.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-num">04</span>
+      <div>
+        <div class="step-title">Sort out the practical stuff</div>
+        <div class="step-desc">Visa, paperwork, or relocation questions? Our <a href="consultancy.html">Consultancy</a> page covers digital nomad visa support and getting set up in Barcelona.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cta-box">
+    <div class="cta-box-text">Ready to meet everyone in person?</div>
+    <a href="https://luma.com/barcelonadigitalnomads" target="_blank" class="btn-primary">See upcoming events →</a>
+  </div>
+
+  <footer>
+    <span class="footer-left">© 2026 Barcelona Digital Nomads · <a href="mailto:bcndigitalnomads@gmail.com">bcndigitalnomads@gmail.com</a></span>
+    <nav class="footer-socials">
+      <a href="https://www.instagram.com/bcndigitalnomads" target="_blank">Instagram</a>
+      <a href="https://www.meetup.com/barcelona-digital-nomads" target="_blank">Meetup</a>
+      <a href="https://www.skool.com/ai-circle/about" target="_blank">Skool</a>
+    </nav>
+  </footer>
+
+</div>
+</body>
+</html>

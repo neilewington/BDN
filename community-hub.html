@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Hub — Barcelona Digital Nomads</title>
+  <meta name="description" content="Join the Barcelona Digital Nomads community on WhatsApp and Facebook." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FFFFFF;
+      --bg-alt: #F3F2EF;
+      --ink: #0C0C0C;
+      --muted: #868686;
+      --border: #E0DFDB;
+      --blue: #1B43F0;
+      --blue-light: #EEF2FF;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    .page { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+    /* HEADER */
+    header {
+      padding: 40px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo img { width: 40px; height: 40px; border-radius: 10px; }
+    .logo-text { font-size: 15px; font-weight: 700; color: var(--ink); letter-spacing: -0.2px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none; }
+    .nav-links a:hover { color: var(--blue); }
+
+    /* TITLE */
+    .title-block { padding: 80px 0 56px; max-width: 700px; }
+    .eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .lede { font-size: 18px; color: var(--muted); line-height: 1.6; max-width: 600px; }
+
+    /* LINK CARDS */
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding-bottom: 60px;
+    }
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      text-decoration: none;
+      color: inherit;
+      background: var(--bg-alt);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .link-card:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(27,67,240,0.1); }
+    .link-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px;
+      flex-shrink: 0;
+      color: white;
+    }
+    .link-icon.whatsapp { background: #25D366; }
+    .link-icon.facebook { background: #1877F2; }
+    .link-icon.business { background: #128C7E; }
+    .link-icon.rental { background: #F59E0B; }
+    .link-icon.luma { background: #111111; }
+    .link-icon.meetup { background: #ED1C40; }
+    .link-title { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 4px; }
+    .link-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .link-arrow { margin-left: auto; font-size: 20px; color: var(--muted); flex-shrink: 0; }
+
+    .note {
+      max-width: 700px;
+      font-size: 13px;
+      color: var(--muted);
+      padding-bottom: 80px;
+      line-height: 1.6;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-left { font-size: 13px; color: var(--muted); }
+    .footer-left a { color: var(--blue); text-decoration: none; }
+    .footer-socials { display: flex; gap: 20px; }
+    .footer-socials a {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+    }
+    .footer-socials a:hover { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .page { padding: 0 20px; }
+      .nav-links { gap: 16px; }
+      .link-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="BDN Logo" />
+      <span class="logo-text">Barcelona Digital Nomads</span>
+    </a>
+    <nav class="nav-links">
+      <a href="new-in-town.html">New in Town</a>
+      <a href="about.html">About Us</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <div class="title-block">
+    <span class="eyebrow">Community Hub</span>
+    <h1>Stay in the loop, every day</h1>
+    <p class="lede">The website is where you find out about us — WhatsApp, Facebook, Luma and Meetup are where the community actually happens day to day. Jump in below.</p>
+  </div>
+
+  <div class="link-grid">
+
+    <a href="https://chat.whatsapp.com/BTAbjNgNVxTCAndt1Fgd4M" target="_blank" rel="noopener" class="link-card">
+      <div class="link-icon whatsapp">💬</div>
+      <div>
+        <div class="link-title">WhatsApp Community</div>
+        <div class="link-desc">7,100+ members. Quick questions, daily chat, and last-minute plans.</div>
+      </div>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a href="#" class="link-card">
+      <div class="link-icon business">💼</div>
+      <div>
+        <div class="link-title">Business WhatsApp Community</div>
+        <div class="link-desc">For founders, freelancers and remote workers — business chat, collaborations, and opportunities.</div>
+      </div>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a href="https://chat.whatsapp.com/JIWpo518Ilj3HIOpmlkLE5" target="_blank" rel="noopener" class="link-card">
+      <div class="link-icon rental">🏠</div>
+      <div>
+        <div class="link-title">Rental Community</div>
+        <div class="link-desc">Rooms, flats, and sublets in Barcelona — find a place or fill one.</div>
+      </div>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a href="#" class="link-card">
+      <div class="link-icon facebook">📘</div>
+      <div>
+        <div class="link-title">Facebook Group</div>
+        <div class="link-desc">Longer discussions, event announcements, and recommendations.</div>
+      </div>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a href="https://luma.com/barcelonadigitalnomads" target="_blank" rel="noopener" class="link-card">
+      <div class="link-icon luma">📅</div>
+      <div>
+        <div class="link-title">Luma</div>
+        <div class="link-desc">Our events calendar — see what's coming up and RSVP.</div>
+      </div>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a href="https://www.meetup.com/barcelona-digital-nomads" target="_blank" rel="noopener" class="link-card">
+      <div class="link-icon meetup">🤝</div>
+      <div>
+        <div class="link-title">Meetup</div>
+        <div class="link-desc">Find our weekly Wednesday meetups and RSVP on Meetup.</div>
+      </div>
+      <span class="link-arrow">→</span>
+    </a>
+
+  </div>
+
+  <p class="note">Links coming soon — drop in the Business WhatsApp and Facebook links and this page is ready to go live.</p>
+
+  <footer>
+    <span class="footer-left">© 2026 Barcelona Digital Nomads · <a href="mailto:bcndigitalnomads@gmail.com">bcndigitalnomads@gmail.com</a></span>
+    <nav class="footer-socials">
+      <a href="https://www.instagram.com/bcndigitalnomads" target="_blank">Instagram</a>
+      <a href="https://www.meetup.com/barcelona-digital-nomads" target="_blank">Meetup</a>
+      <a href="https://www.skool.com/ai-circle/about" target="_blank">Skool</a>
+    </nav>
+  </footer>
+
+</div>
+</body>
+</html>
