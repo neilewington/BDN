@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consultancy — Barcelona Digital Nomads</title>
+  <meta name="description" content="Spain Digital Nomad Visa consultancy for UK and US citizens with visa specialist Katherine Barnes, powered by the Barcelona Digital Nomads community." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FFFFFF;
+      --bg-alt: #F3F2EF;
+      --ink: #0C0C0C;
+      --muted: #868686;
+      --border: #E0DFDB;
+      --blue: #1B43F0;
+      --blue-light: #EEF2FF;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    .page { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+    /* HEADER */
+    header {
+      padding: 40px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo img { width: 40px; height: 40px; border-radius: 10px; }
+    .logo-text { font-size: 15px; font-weight: 700; color: var(--ink); letter-spacing: -0.2px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none; }
+    .nav-links a:hover { color: var(--blue); }
+
+    /* TITLE */
+    .title-block { padding: 80px 0 56px; max-width: 700px; }
+    .eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .lede { font-size: 18px; color: var(--muted); line-height: 1.6; max-width: 600px; }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding-bottom: 60px;
+    }
+    .service-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      background: var(--bg-alt);
+    }
+    .service-card.featured {
+      border-color: var(--blue);
+      background: var(--blue-light);
+    }
+    .service-card.offer { grid-row: span 2; display: flex; flex-direction: column; }
+    .service-icon { font-size: 26px; margin-bottom: 14px; }
+    .service-title { font-size: 17px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .service-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    .offer-price { font-size: 36px; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 4px; }
+    .offer-price span { font-size: 14px; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+    .checklist { list-style: none; margin: 12px 0 28px; }
+    .checklist li {
+      position: relative;
+      padding: 9px 0 9px 28px;
+      font-size: 14px;
+      line-height: 1.5;
+      border-top: 1px solid rgba(27, 67, 240, 0.15);
+    }
+    .checklist li::before { content: "✓"; position: absolute; left: 4px; color: var(--blue); font-weight: 800; }
+    .service-card.offer .btn-primary { margin-top: auto; align-self: flex-start; }
+    .text-link { display: inline-block; margin-top: 14px; font-size: 14px; font-weight: 600; color: var(--blue); text-decoration: none; }
+    .text-link:hover { text-decoration: underline; }
+
+    /* CONSULTANT */
+    .kicker {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .consultant {
+      display: grid;
+      grid-template-columns: 5fr 6fr;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .consultant img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; object-position: 50% 30%; display: block; }
+    .consultant-body { padding: 36px; display: flex; flex-direction: column; justify-content: center; }
+    .consultant h2 { font-size: 28px; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 4px; }
+    .consultant-role { font-size: 14px; font-weight: 600; color: var(--blue); margin-bottom: 16px; }
+    .consultant p { font-size: 15px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+    .consultant-stats { display: flex; gap: 32px; flex-wrap: wrap; }
+    .consultant-stats strong { display: block; font-size: 24px; font-weight: 900; letter-spacing: -0.03em; }
+    .consultant-stats span { font-size: 12px; color: var(--muted); }
+
+    /* TESTIMONIALS */
+    .testimonials { padding-bottom: 60px; }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .testimonial {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .testimonial blockquote { font-size: 15px; line-height: 1.6; }
+    .testimonial figcaption { margin-top: auto; font-size: 13px; font-weight: 700; }
+    .testimonial figcaption span { display: block; font-weight: 500; color: var(--muted); }
+
+    .disclaimer {
+      max-width: 700px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      padding-bottom: 40px;
+    }
+
+    .cta-box {
+      background: var(--ink);
+      color: white;
+      border-radius: 16px;
+      padding: 36px 32px;
+      margin-bottom: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .cta-box-title { font-size: 20px; font-weight: 800; margin-bottom: 6px; }
+    .cta-box-desc { font-size: 14px; color: rgba(255,255,255,0.7); max-width: 460px; line-height: 1.6; }
+    .cta-box-desc a { color: white; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue); color: white; text-decoration: none;
+      font-size: 14px; font-weight: 600; padding: 13px 24px; border-radius: 10px;
+      white-space: nowrap;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-left { font-size: 13px; color: var(--muted); }
+    .footer-left a { color: var(--blue); text-decoration: none; }
+    .footer-socials { display: flex; gap: 20px; }
+    .footer-socials a {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+    }
+    .footer-socials a:hover { color: var(--ink); }
+
+    @media (max-width: 900px) {
+      .testimonial-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 0 20px; }
+      .nav-links { gap: 16px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card.offer { grid-row: auto; }
+      .consultant { grid-template-columns: 1fr; }
+      .consultant img { min-height: 0; aspect-ratio: 3 / 2; }
+      .consultant-body { padding: 26px; }
+      .testimonial-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="BDN Logo" />
+      <span class="logo-text">Barcelona Digital Nomads</span>
+    </a>
+    <nav class="nav-links">
+      <a href="new-in-town.html">New in Town</a>
+      <a href="about.html">About Us</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <div class="title-block">
+    <span class="eyebrow">Consultancy</span>
+    <h1>Your Spain Digital Nomad Visa, sorted</h1>
+    <p class="lede">Expert visa and residency guidance for UK and US citizens from specialist Katherine Barnes, powered by the Barcelona Digital Nomads community.</p>
+  </div>
+
+  <section class="consultant">
+    <img src="consultancy/katherine-barnes.jpg" alt="Katherine Barnes, Spanish visa and residency specialist" />
+    <div class="consultant-body">
+      <span class="kicker">Your consultant</span>
+      <h2>Katherine Barnes</h2>
+      <div class="consultant-role">Spanish Visa &amp; Residency Specialist · The Visa Desk Spain</div>
+      <p>Katherine is a native English speaker from the UK who has lived in Spain for over 10 years. She specialises in Spanish visas and residency, helping English-speaking clients through a process that can feel overwhelming on your own.</p>
+      <div class="consultant-stats">
+        <div><strong>10+</strong><span>years living in Spain</span></div>
+        <div><strong>100+</strong><span>successful visa approvals</span></div>
+        <div><strong>UK &amp; US</strong><span>citizens supported</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="services-grid">
+
+    <div class="service-card featured offer">
+      <div class="service-icon">🛂</div>
+      <div class="service-title">1-to-1 visa consultation</div>
+      <div class="offer-price">€55 <span>/ 45 minutes</span></div>
+      <ul class="checklist">
+        <li>Overview of the Spanish Digital Nomad Visa</li>
+        <li>Assessment of your personal and professional situation</li>
+        <li>Guidance on the documents you'll need</li>
+        <li>Application timeline and step-by-step process</li>
+        <li>Alternative Spanish visa options if the Digital Nomad Visa isn't the right fit</li>
+      </ul>
+      <a href="https://digitalnomadvisaspain.online/book-a-consultation/" target="_blank" rel="noopener" class="btn-primary">Book a consultation →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🎥</div>
+      <div class="service-title">Free monthly webinars</div>
+      <div class="service-desc">Live online sessions on Tuesdays at 7 PM CET, hosted by Katherine and the BDN community. Get the latest updates on the Digital Nomad Visa, then put your questions to an expert in the live Q&amp;A.</div>
+      <a href="https://digitalnomadvisaspain.online/service/webinars/" target="_blank" rel="noopener" class="text-link">See upcoming webinars →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🤝</div>
+      <div class="service-title">A community when you land</div>
+      <div class="service-desc">Beyond the paperwork, BDN's weekly meetups, workshops, and coworking sessions connect you with locals and newcomers who've been through the same move.</div>
+      <a href="new-in-town.html" class="text-link">New in town? Start here →</a>
+    </div>
+
+  </div>
+
+  <section class="testimonials">
+    <span class="kicker">What clients say</span>
+    <div class="testimonial-grid">
+      <figure class="testimonial">
+        <blockquote>“She’s thorough in her document checks, responsive to questions, and knows the process well. I looked at other lawyers before, and she was by far the most caring and trustworthy about it all.”</blockquote>
+        <figcaption>Stephen Lizcano<span>Digital Nomad Visa client</span></figcaption>
+      </figure>
+      <figure class="testimonial">
+        <blockquote>“It has been worth every penny to work with Katherine. She’s warm, encouraging, and a true professional.”</blockquote>
+        <figcaption>Mckenna Mellon<span>Digital Nomad Visa client</span></figcaption>
+      </figure>
+      <figure class="testimonial">
+        <blockquote>“Katherine was truly wonderful. She walked me through the process, helped me get my U.S. paperwork together, and made it happen!”</blockquote>
+        <figcaption>Sergio Antonio<span>Digital Nomad Visa client</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <p class="disclaimer">Consultations are delivered by Katherine Barnes of The Visa Desk Spain. Barcelona Digital Nomads is not a law firm, and the information on this page isn't legal or immigration advice.</p>
+
+  <div class="cta-box">
+    <div>
+      <div class="cta-box-title">Thinking about the move?</div>
+      <div class="cta-box-desc">Book a 45-minute consultation with Katherine, or email <a href="mailto:contact@digitalnomadvisaspain.online">contact@digitalnomadvisaspain.online</a> with your questions.</div>
+    </div>
+    <a href="https://digitalnomadvisaspain.online/book-a-consultation/" target="_blank" rel="noopener" class="btn-primary">Book a consultation →</a>
+  </div>
+
+  <footer>
+    <span class="footer-left">© 2026 Barcelona Digital Nomads · <a href="mailto:bcndigitalnomads@gmail.com">bcndigitalnomads@gmail.com</a></span>
+    <nav class="footer-socials">
+      <a href="https://www.instagram.com/bcndigitalnomads" target="_blank">Instagram</a>
+      <a href="https://www.meetup.com/barcelona-digital-nomads" target="_blank">Meetup</a>
+      <a href="https://www.skool.com/ai-circle/about" target="_blank">Skool</a>
+    </nav>
+  </footer>
+
+</div>
+</body>
+</html>
