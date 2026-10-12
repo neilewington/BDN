@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI CIRCLE Talks &amp; Skill-Share #6 at Norrsken — Inside the AI Startup Ecosystem</title>
+  <meta name="description" content="AI CIRCLE Talks &amp; Skill-Share #6, a special edition at Norrsken House Barcelona. Tuesday 10 November 2026, 6–11pm. Talks, 30-second pitches, Show &amp; Tell and the panel Inside the AI Startup Ecosystem: Building, Scaling &amp; Investing in 2027." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FFFFFF;
+      --bg-alt: #F3F2EF;
+      --ink: #0C0C0C;
+      --muted: #868686;
+      --border: #E0DFDB;
+      --blue: #1B43F0;
+      --blue-light: #EEF2FF;
+      --violet: #7C3AED;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    .page { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+    /* HEADER */
+    header {
+      padding: 40px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo img { width: 40px; height: 40px; border-radius: 10px; }
+    .logo-text { font-size: 15px; font-weight: 700; color: var(--ink); letter-spacing: -0.2px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none; }
+    .nav-links a:hover { color: var(--blue); }
+
+    /* HERO */
+    .event-hero {
+      margin: 48px 0 20px;
+      border-radius: 24px;
+      overflow: hidden;
+      color: #FFFFFF;
+      background: linear-gradient(135deg, #1B43F0 0%, #3B6BFF 52%, #7C3AED 100%);
+    }
+    .event-cover img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      object-fit: cover;
+      object-position: center 45%;
+    }
+    .event-hero-body { padding: 48px 56px 52px; }
+    .presenter {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 22px;
+    }
+    .presenter i {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #FFFFFF;
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.22);
+    }
+    .event-hero h1 {
+      font-size: clamp(38px, 6.4vw, 68px);
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      line-height: 1.02;
+      max-width: 820px;
+      margin-bottom: 14px;
+    }
+    .event-sub {
+      font-size: clamp(18px, 2.4vw, 24px);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 32px;
+    }
+    .event-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.28);
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 14px; font-weight: 700; text-decoration: none;
+      padding: 14px 24px; border-radius: 10px; white-space: nowrap;
+    }
+    .btn-white { background: #FFFFFF; color: var(--ink); }
+    .btn-ghost { color: #FFFFFF; border: 1px solid rgba(255,255,255,0.5); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.12); }
+    .btn-primary { background: var(--blue); color: #FFFFFF; }
+
+    /* FACTS */
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      margin-bottom: 80px;
+    }
+    .fact { padding: 24px 26px; }
+    .fact + .fact { border-left: 1px solid var(--border); }
+    .fact strong { display: block; font-size: 28px; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 4px; }
+    .fact span { font-size: 13px; color: var(--muted); }
+
+    /* SECTIONS */
+    .section { padding-bottom: 80px; }
+    .kicker {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+    .section h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      max-width: 720px;
+      margin-bottom: 14px;
+    }
+    .section-lede { font-size: 16px; color: var(--muted); line-height: 1.6; max-width: 640px; margin-bottom: 32px; }
+
+    .format-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .format {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 26px;
+      background: var(--bg-alt);
+    }
+    .format-icon { font-size: 26px; margin-bottom: 16px; }
+    .format-title { font-size: 17px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .format-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    .themes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .theme { border-top: 3px solid var(--blue); padding-top: 18px; }
+    .theme:nth-child(2) { border-color: #3B6BFF; }
+    .theme:nth-child(3) { border-color: var(--violet); }
+    .theme-num { font-size: 12px; font-weight: 700; color: var(--muted); margin-bottom: 8px; }
+    .theme-title { font-size: 22px; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 8px; }
+    .theme-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* SPEAKERS + PITCH */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-bottom: 80px; }
+    .panel {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .panel h3 { font-size: 24px; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 10px; }
+    .panel p { font-size: 15px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+    .panel .btn { margin-top: auto; }
+    .panel-pitch { background: var(--ink); color: #FFFFFF; border-color: var(--ink); }
+    .panel-pitch .kicker { color: #9DB4FF; }
+    .panel-pitch p { color: rgba(255,255,255,0.7); }
+    .timer {
+      font-size: 64px;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      line-height: 1;
+      margin-bottom: 14px;
+      background: linear-gradient(90deg, #6F8CFF, #B794F6);
+      -webkit-background-clip: text;
+              background-clip: text;
+      color: transparent;
+    }
+    .tba-faces { display: flex; margin-bottom: 20px; }
+    .tba-faces span {
+      width: 48px; height: 48px; border-radius: 50%;
+      border: 3px solid var(--bg);
+      background: linear-gradient(135deg, #DDE4FF, #EDE3FF);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 800; color: #8A97C9;
+    }
+    .tba-faces span + span { margin-left: -12px; }
+
+    /* VENUE */
+    .venue {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 80px;
+    }
+    .venue-body { padding: 40px; }
+    .venue-logo { height: 22px; width: auto; display: block; margin-bottom: 22px; }
+    .venue-body h2 { font-size: 30px; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 12px; }
+    .venue-body p { font-size: 15px; color: var(--muted); line-height: 1.6; margin-bottom: 22px; }
+    .address { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 18px; }
+    .text-link { font-size: 14px; font-weight: 700; color: var(--blue); text-decoration: none; }
+    .text-link:hover { text-decoration: underline; }
+    .venue-facts {
+      background: var(--bg-alt);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 20px;
+      align-content: center;
+    }
+    .venue-facts strong { display: block; font-size: 26px; font-weight: 900; letter-spacing: -0.03em; }
+    .venue-facts span { font-size: 13px; color: var(--muted); }
+
+    /* AUDIENCE */
+    .audience { display: flex; flex-wrap: wrap; gap: 10px; }
+    .audience span {
+      font-size: 14px; font-weight: 600;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--blue-light);
+      color: var(--blue);
+    }
+
+    /* HOST + CTA */
+    .host {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px 36px;
+      margin-bottom: 20px;
+    }
+    .host-title { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }
+    .host-desc { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 620px; }
+
+    .cta-box {
+      background: var(--blue-light);
+      border-radius: 20px;
+      padding: 36px;
+      margin-bottom: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .cta-box-title { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 6px; }
+    .cta-box-desc { font-size: 14px; color: var(--muted); }
+
+    /* AGENDA */
+    .agenda { border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
+    .agenda-row {
+      display: grid;
+      grid-template-columns: 150px 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 20px 28px;
+    }
+    .agenda-row + .agenda-row { border-top: 1px solid var(--border); }
+    .agenda-time { font-size: 14px; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .agenda-title { font-size: 17px; font-weight: 800; letter-spacing: -0.02em; }
+    .agenda-note { font-size: 13px; color: var(--muted); margin-top: 3px; }
+    .agenda-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 5px 10px; border-radius: 999px;
+      background: var(--bg-alt); color: var(--muted); white-space: nowrap;
+    }
+    .agenda-row.is-networking { background: var(--bg-alt); }
+    .agenda-row.is-networking .agenda-tag { background: #FFFFFF; }
+    .agenda-row.is-panel { background: linear-gradient(135deg, #1B43F0 0%, #3B6BFF 52%, #7C3AED 100%); color: #FFFFFF; border-top-color: transparent; }
+    .agenda-row.is-panel .agenda-time,
+    .agenda-row.is-panel .agenda-note { color: rgba(255,255,255,0.8); }
+    .agenda-row.is-panel .agenda-tag { background: #FFFFFF; color: var(--blue); }
+
+    /* GOOD TO KNOW */
+    .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .info-grid .format-desc a { color: var(--blue); font-weight: 600; text-decoration: none; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-left { font-size: 13px; color: var(--muted); }
+    .footer-left a { color: var(--blue); text-decoration: none; }
+    .footer-socials { display: flex; gap: 20px; }
+    .footer-socials a {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+    }
+    .footer-socials a:hover { color: var(--ink); }
+
+    @media (max-width: 900px) {
+      .format-grid { grid-template-columns: repeat(2, 1fr); }
+      .facts { grid-template-columns: repeat(2, 1fr); }
+      .fact:nth-child(3) { border-left: none; }
+      .fact:nth-child(n+3) { border-top: 1px solid var(--border); }
+      .venue { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 0 16px; }
+      .nav-links { gap: 16px; }
+      .event-hero { border-radius: 20px; margin-top: 32px; }
+      .event-cover img { aspect-ratio: 4 / 3; }
+      .event-hero-body { padding: 30px 24px 32px; }
+      .format-grid, .themes, .split, .info-grid { grid-template-columns: 1fr; }
+      .agenda-row { grid-template-columns: 1fr auto; gap: 6px 12px; padding: 18px 20px; }
+      .agenda-time { grid-column: 1 / -1; }
+      .panel, .venue-body, .venue-facts { padding: 26px; }
+      .host { padding: 26px; }
+      .cta-box { padding: 26px; }
+      footer { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="BDN Logo" />
+      <span class="logo-text">Barcelona Digital Nomads</span>
+    </a>
+    <nav class="nav-links">
+      <a href="new-in-town.html">New in Town</a>
+      <a href="about.html">About Us</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <section class="event-hero">
+    <div class="event-cover">
+      <img src="events/ai-circle-norrsken-cover.jpg" alt="A packed room at Norrsken House Barcelona watching a speaker, with AI Circle on the screen" />
+    </div>
+    <div class="event-hero-body">
+    <span class="presenter"><i></i> AI CIRCLE Talks &amp; Skill-Share #6 · Special edition at Norrsken</span>
+    <h1>Inside the AI Startup Ecosystem</h1>
+    <p class="event-sub">Building, Scaling &amp; Investing in 2027</p>
+    <div class="event-meta">
+      <span class="chip">📅 Tuesday 10 November 2026</span>
+      <span class="chip">🕕 6pm – 11pm CET</span>
+      <span class="chip">📍 Norrsken House Barcelona</span>
+      <span class="chip">👥 120 places</span>
+    </div>
+    <div class="hero-actions">
+      <a href="https://luma.com/barcelonadigitalnomads" target="_blank" rel="noopener" class="btn btn-white">Reserve your spot →</a>
+    </div>
+    </div>
+  </section>
+
+  <div class="facts">
+    <div class="fact"><strong>2</strong><span>talks</span></div>
+    <div class="fact"><strong>1</strong><span>headline panel</span></div>
+    <div class="fact"><strong>3</strong><span>Show &amp; Tell showcases</span></div>
+    <div class="fact"><strong>30 sec</strong><span>pitches, open to everyone</span></div>
+  </div>
+
+  <section class="section">
+    <span class="kicker">The evening</span>
+    <h2>AI CIRCLE is back for edition #6</h2>
+    <p class="section-lede">Our evening skill-share conference returns, and this one is a special edition at Norrsken House Barcelona, Europe's biggest hub for tech and impact. Talks, 30-second pitches, a Show &amp; Tell on making money with AI, and a panel on the AI startup ecosystem, with plenty of time to network.</p>
+    <div class="agenda">
+      <div class="agenda-row">
+        <div class="agenda-time">6:00 – 6:20pm</div>
+        <div><div class="agenda-title">Talk 1</div><div class="agenda-note">Speaker to be announced</div></div>
+        <span class="agenda-tag">Talk</span>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-time">6:20 – 6:40pm</div>
+        <div><div class="agenda-title">Talk 2</div><div class="agenda-note">Speaker to be announced</div></div>
+        <span class="agenda-tag">Talk</span>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-time">6:40 – 7:10pm</div>
+        <div><div class="agenda-title">30-second pitches &amp; sponsor intro</div><div class="agenda-note">Anyone can take the stage</div></div>
+        <span class="agenda-tag">Pitches</span>
+      </div>
+      <div class="agenda-row is-networking">
+        <div class="agenda-time">7:10 – 8:00pm</div>
+        <div><div class="agenda-title">Networking break</div></div>
+        <span class="agenda-tag">Networking</span>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-time">8:00 – 8:30pm</div>
+        <div><div class="agenda-title">Show &amp; Tell: Making Money with AI</div><div class="agenda-note">3 × 10-minute showcases</div></div>
+        <span class="agenda-tag">Show &amp; Tell</span>
+      </div>
+      <div class="agenda-row is-panel">
+        <div class="agenda-time">8:30 – 9:00pm</div>
+        <div><div class="agenda-title">Panel: Inside the AI Startup Ecosystem</div><div class="agenda-note">Building, Scaling &amp; Investing in 2027</div></div>
+        <span class="agenda-tag">Panel</span>
+      </div>
+      <div class="agenda-row is-networking">
+        <div class="agenda-time">9:00 – 11:00pm</div>
+        <div><div class="agenda-title">Networking</div></div>
+        <span class="agenda-tag">Networking</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="kicker">The headline panel · 8:30pm</span>
+    <h2>Building, scaling &amp; investing</h2>
+    <p class="section-lede">A 30-minute panel that follows an AI startup from first idea to funding round.</p>
+    <div class="themes">
+      <div class="theme">
+        <div class="theme-num">01</div>
+        <div class="theme-title">Building</div>
+        <div class="theme-desc">Turning an AI idea into a real product, and the tools and teams that get you there.</div>
+      </div>
+      <div class="theme">
+        <div class="theme-num">02</div>
+        <div class="theme-title">Scaling</div>
+        <div class="theme-desc">Growing from first customers to a company, and what changes along the way.</div>
+      </div>
+      <div class="theme">
+        <div class="theme-num">03</div>
+        <div class="theme-title">Investing</div>
+        <div class="theme-desc">How investors are looking at AI startups heading into 2027.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="split">
+    <div class="panel">
+      <span class="kicker">Speakers</span>
+      <div class="tba-faces"><span>?</span><span>?</span><span>?</span><span>?</span></div>
+      <h3>Speakers to be announced</h3>
+      <p>Two talks, three Show &amp; Tell showcases and a panel. Want to be one of them? We're looking for speakers.</p>
+      <a href="mailto:bcndigitalnomads@gmail.com?subject=Speaker%20application%20-%20AI%20CIRCLE%20%236%20at%20Norrsken" class="text-link">Want to speak? Get in touch →</a>
+    </div>
+    <div class="panel panel-pitch" id="pitch">
+      <span class="kicker">6:40pm · Open to everyone</span>
+      <div class="timer">0:30</div>
+      <h3>Anyone can pitch</h3>
+      <p>Got a startup or an idea? Take the stage for 30 seconds and pitch it to the room. No application needed, just come along ready.</p>
+      <a href="https://luma.com/barcelonadigitalnomads" target="_blank" rel="noopener" class="btn btn-white">Reserve your spot →</a>
+    </div>
+  </div>
+
+  <div class="venue">
+    <div class="venue-body">
+      <span class="kicker">The venue</span>
+      <img class="venue-logo" src="partners/norrsken.svg" alt="Norrsken" />
+      <h2>Norrsken House Barcelona</h2>
+      <p>A beachfront startup hub and coworking space for Barcelona's tech and impact community. Four floors of workspace and a rooftop right by the sea, home to founders, investors and builders.</p>
+      <div class="address">Passeig del Mare Nostrum 15<br />08039 Barcelona</div>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Norrsken+House+Barcelona%2C+Passeig+del+Mare+Nostrum+15%2C+08039+Barcelona" target="_blank" rel="noopener" class="text-link">Get directions →</a>
+    </div>
+    <div class="venue-facts">
+      <div><strong>7,600 m²</strong><span>beachfront building</span></div>
+      <div><strong>4 floors</strong><span>plus a rooftop terrace</span></div>
+      <div><strong>1,300+</strong><span>Norrsken members</span></div>
+      <div><strong>By the beach</strong><span>in Barceloneta</span></div>
+    </div>
+  </div>
+
+  <section class="section">
+    <span class="kicker">Who it's for</span>
+    <h2>A friendly, international crowd</h2>
+    <p class="section-lede">Expect 100+ Barcelona professionals in the room.</p>
+    <div class="audience">
+      <span>Expats &amp; locals</span>
+      <span>Entrepreneurs</span>
+      <span>Founders</span>
+      <span>Freelancers</span>
+      <span>Digital nomads</span>
+      <span>Tech &amp; AI enthusiasts</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="kicker">Good to know</span>
+    <div class="info-grid">
+      <div class="format">
+        <div class="format-icon">🕕</div>
+        <div class="format-title">When</div>
+        <div class="format-desc">Tuesday 10 November 2026, 6pm – 11pm CET. The first talk starts at 6pm.</div>
+      </div>
+      <div class="format">
+        <div class="format-icon">🧾</div>
+        <div class="format-title">Invoices</div>
+        <div class="format-desc">Putting your ticket through as a business or employer expense? Email <a href="mailto:accounts@bcndigitalnomads.com">accounts@bcndigitalnomads.com</a> for an invoice.</div>
+      </div>
+      <div class="format">
+        <div class="format-icon">↩️</div>
+        <div class="format-title">Refunds</div>
+        <div class="format-desc">We refund requests made at least 24 hours before the event starts.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="host">
+    <div>
+      <div class="host-title">Become an AI CIRCLE member</div>
+      <div class="host-desc">Join a global online community of AI entrepreneurs and professionals. For $29/month, members get the AI CIRCLE community platform plus exclusive discounts on AI CIRCLE and BDN events.</div>
+    </div>
+    <a href="https://www.skool.com/ai-circle/about" target="_blank" rel="noopener" class="btn btn-primary">Join AI CIRCLE →</a>
+  </div>
+
+  <div class="cta-box">
+    <div>
+      <div class="cta-box-title">Only 120 places</div>
+      <div class="cta-box-desc">Tuesday 10 November, 6pm – 11pm at Norrsken House Barcelona.</div>
+    </div>
+    <a href="https://luma.com/barcelonadigitalnomads" target="_blank" rel="noopener" class="btn btn-primary">Reserve your spot →</a>
+  </div>
+
+  <footer>
+    <span class="footer-left">© 2026 Barcelona Digital Nomads · <a href="mailto:bcndigitalnomads@gmail.com">bcndigitalnomads@gmail.com</a></span>
+    <nav class="footer-socials">
+      <a href="https://www.instagram.com/bcndigitalnomads" target="_blank">Instagram</a>
+      <a href="https://www.meetup.com/barcelona-digital-nomads" target="_blank">Meetup</a>
+      <a href="https://www.skool.com/ai-circle/about" target="_blank">Skool</a>
+    </nav>
+  </footer>
+
+</div>
+</body>
+</html>
